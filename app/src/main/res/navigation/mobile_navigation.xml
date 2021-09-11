@@ -9,7 +9,11 @@
         android:id="@+id/nav_home"
         android:name="com.achtec.tourguide.JetpackNavigation.ui.dashboard.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_search_for_tour_guide"
+            app:destination="@id/search_for_tour_guide" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -22,4 +26,18 @@
         android:name="com.achtec.tourguide.JetpackNavigation.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/search_for_tour_guide"
+        android:name="com.achtec.tourguide.Search_for_tour_guide"
+        android:label="fragment_search_for_tour_guide"
+        tools:layout="@layout/fragment_search_for_tour_guide" >
+        <action
+            android:id="@+id/action_search_for_tour_guide_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.achtec.tourguide.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
 </navigation>
