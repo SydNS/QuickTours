@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/drawable/account_balance_wallet_24.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/drawable/back_btn_bg.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/drawable/close_24.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/drawable/edit_24.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/drawable/editable_theme.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/drawable/ic_baseline_menu_open_24.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/drawable/menu_open_24.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/drawable/no_notifications_24.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/drawable/ongoing_24.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/drawable/provide_bg.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/drawable/rounded_btn.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/drawable/search_bg.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/drawable/view_bg.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_dashboard.xml" value="0.25" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_home_page.xml" value="0.25" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_hotels.xml" value="0.25" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_login.xml" value="0.2896341463414634" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_restaurants.xml" value="0.22" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_sign_up_as_hotel.xml" value="0.25" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_sign_up_as_restaurant.xml" value="0.25" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_sign_up_as_restuarant.xml" value="0.2" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_sign_up_as_tour_guide.xml" value="0.2" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_sign_up_as_tourist.xml" value="0.25" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_sign_up_as_transport_provider.xml" value="0.2" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_taxi_boda.xml" value="0.2" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_tour_destinations.xml" value="0.2" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_tour_guide.xml" value="0.33" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_tour_guide_profile.xml" value="0.25" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_tours.xml" value="0.2" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_transport_provider.xml" value="0.22" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_wallet.xml" value="0.2909698996655518" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_walllet.xml" value="0.1" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/header.xml" value="0.2" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/main_fragment.xml" value="0.2" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/sign_up_activity.xml" value="0.2" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/top_up_pop_up.xml" value="0.33" />
+        <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/menu/main_menu.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_edit_tour_guide_profile.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_sign_up_as_tour_guide.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_sign_up_as_transport_provider.xml" value="0.196875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

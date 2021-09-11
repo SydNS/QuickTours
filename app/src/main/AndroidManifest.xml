@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.achtec.tourguide">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TourGuide">
+        <activity
+            android:name=".TransportProviderAccount.TransportProviderProfile"
+            android:exported="true" />
+        <activity
+            android:name=".TourGuideAccount.EditTourGuideProfile"
+            android:exported="true" />
+        <activity
+            android:name=".TourGuideAccount.TourGuideProfile"
+            android:exported="true"
+            android:theme="@style/NoActionBar"/>
+        <activity
+            android:name=".TourDestinations"
+            android:exported="true"
+            android:parentActivityName=".DashBoard">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DashBoard" />
+        </activity>
+        <activity
+            android:name=".TransportProvider"
+            android:exported="true"
+            android:parentActivityName=".DashBoard">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DashBoard" />
+        </activity>
+        <activity
+            android:name=".TourGuide"
+            android:exported="true"
+            android:parentActivityName=".DashBoard">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DashBoard" />
+        </activity>
+        <activity
+            android:name=".WalletActivity"
+            android:exported="true"
+            android:parentActivityName=".DashBoard">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DashBoard" />
+        </activity>
+        <activity
+            android:name=".DashBoard"
+            android:exported="true"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".SignUpAsTransportProvider"
+            android:exported="true"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".SignUpAsTourGuide"
+            android:exported="true"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".SignUpAsTourist"
+            android:exported="true"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".SignUp"
+            android:exported="true"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/NoActionBar" />
+        <activity android:allowEmbedded="true"
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

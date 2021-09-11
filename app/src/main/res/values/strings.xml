@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">QwicTour</string>
+    <string name="choose_sign_up_option">Choose Sign Up option…</string>
+    <string name="sign_up_as_tourist">Sign up as Tourist</string>
+    <string name="sign_up_as_tour_guide">Sign Up as Tour Guide</string>
+    <string name="sign_up_as_transport_provider">Sign Up as Transport Provider</string>
+    <string name="sign_up_as_hotel">Sign up as Hotel</string>
+    <string name="sign_up_as_restaurant">Sign up as Restaurant</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="log_in_here">Log in here</string>
+    <string name="don_t_have_an_account_yet">Don\'t have an account yet?</string>
+    <string name="create_account">Create Account</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="log_in">Log in</string>
+    <string name="signing_up_as_restaurant">Signing up as Restaurant…</string>
+    <string name="enter_restaurant_image_here">Enter Restaurant image here:</string>
+    <string name="used_to_upload_restaurant_image">Used to upload restaurant image</string>
+    <string name="enter_restaurant_name">Enter Restaurant Name</string>
+    <string name="phone">Phone</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_location">Enter Location</string>
+    <string name="submit_details">Submit Details</string>
+    <string name="signing_up_as_hotel">Signing up as Hotel</string>
+    <string name="enter_hotel_image_here">Enter Hotel Picture Here</string>
+    <string name="enter_hotel_name">Enter Hotel Name</string>
+    <string name="enter_full_name">Enter Full Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="nin_passport">NIN/Passport</string>
+    <string name="nationality">Nationality</string>
+    <string name="find_the_best_tour_guide_in_town">Find the best Tour Guide in town</string>
+    <string name="signing_up_as_transport_provider">Siging up as Transport Provider</string>
+    <string name="signing_up_as_tour_guide">Signing up as Tour Guide</string>
+    <string name="enter_tour_guide_name">Enter Tour Guide Name</string>
+    <string name="find_tours">Find Tours</string>
+    <string name="find_tour_guides">Find Tour Guides</string>
+    <string name="find_transporters">Find Transporters</string>
+    <string name="find_restaurants">Find Restaurants</string>
+    <string name="find_hotels">Find Hotels</string>
+    <string name="e_wallet">E-Wallet</string>
+    <string name="search">Search</string>
+    <string name="open_drawer">Open Navigation Drawer</string>
+    <string name="close_drawer">Close Navigation Drawer</string>
+    <string name="available_tours">Available Tours</string>
+    <string name="to">To:</string>
+    <string name="from">From:</string>
+    <string name="view_all">View All</string>
+    <string name="from_wallet_back_to_dashboard">From wallet back to dashboard</string>
+    <string name="wallet">Wallet</string>
+    <string name="_5867">**** 5867</string>
+    <string name="_12_12_2021">12/12/2021</string>
+    <string name="balance">Balance</string>
+    <string name="ugx_245000_00">UGX 245000.00</string>
+    <string name="refill_button">Refill Button</string>
+    <string name="transfer_funds">Transfer Funds</string>
+    <string name="do_more_with_wallet">Do more with wallet</string>
+    <string name="refill">Refill</string>
+    <string name="transfer">Transfer</string>
+    <string name="more">More</string>
+    <string name="history">HISTORY</string>
+    <string name="top_up_with_airtel_money">Top up with Airtel Money</string>
+    <string name="top_up_with_mtn_momo">Top up with MTN MoMo</string>
+    <string name="profile">Profile</string>
+    <string name="log_out">Log Out</string>
+    <string name="communicate">Communicate</string>
+    <string name="share">Share</string>
+    <string name="about">About</string>
+    <string name="tour_guide_name">Tour Guide Name</string>
+    <string name="notifications_icon">Notifications icon</string>
+    <string name="closed_tours">Closed Tours</string>
+    <string name="on_going_tour">OngoingTour</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="pending_alerts">Pending Alerts</string>
+    <string name="wallet_transactions_history">Wallet Transactions History</string>
+    <string name="tour_history">Tour History</string>
+    <string-array name="sign_up_options">
+        <item>Choose here</item>
+        <item>Sign up as Tourist</item>
+        <item>Sign up as Tour Guide</item>
+        <item>Sign up as Transporter</item>
+    </string-array>
+</resources>
