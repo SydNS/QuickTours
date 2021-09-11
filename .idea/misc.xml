@@ -43,12 +43,18 @@
         <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/top_up_pop_up.xml" value="0.33" />
         <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/menu/main_menu.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_drawer_screen.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_edit_tour_guide_profile.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_sign_up_as_tour_guide.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_sign_up_as_transport_provider.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/app_bar_drawer_screen.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/content_drawer_screen.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.196875" />
       </map>
     </option>
   </component>

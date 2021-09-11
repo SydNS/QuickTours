@@ -10,6 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TourGuide">
         <activity
+            android:name=".JetpackNavigation.DrawerScreenActivity"
+            android:exported="true"
+            android:label="@string/title_activity_drawer_screen"
+            android:theme="@style/Theme.TourGuide.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".TransportProviderAccount.TransportProviderProfile"
             android:exported="true" />
         <activity
@@ -18,7 +29,7 @@
         <activity
             android:name=".TourGuideAccount.TourGuideProfile"
             android:exported="true"
-            android:theme="@style/NoActionBar"/>
+            android:theme="@style/NoActionBar" />
         <activity
             android:name=".TourDestinations"
             android:exported="true"
@@ -75,15 +86,16 @@
             android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/NoActionBar" />
-        <activity android:allowEmbedded="true"
+        <activity
             android:name=".MainActivity"
+            android:allowEmbedded="true"
             android:exported="true"
             android:theme="@style/NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
     </application>
 
