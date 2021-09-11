@@ -67,23 +67,23 @@
             android:exported="true"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".SignUpAsTransportProvider"
+            android:name=".Authentication.SignUpAsTransportProvider"
             android:exported="true"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".SignUpAsTourGuide"
+            android:name=".Authentication.SignUpAsTourGuide"
             android:exported="true"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".SignUpAsTourist"
+            android:name=".Authentication.SignUpAsTourist"
             android:exported="true"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".SignUp"
+            android:name=".Authentication.SignUp"
             android:exported="true"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Authentication.LoginActivity"
             android:exported="true"
             android:theme="@style/NoActionBar" />
         <activity

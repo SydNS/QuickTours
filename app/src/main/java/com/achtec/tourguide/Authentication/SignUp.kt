@@ -1,4 +1,4 @@
-package com.achtec.tourguide
+package com.achtec.tourguide.Authentication
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import com.achtec.tourguide.R
 import com.achtec.tourguide.databinding.ActivitySignUpBinding
 
 class SignUp : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.achtec.tourguide
+package com.achtec.tourguide.Authentication
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

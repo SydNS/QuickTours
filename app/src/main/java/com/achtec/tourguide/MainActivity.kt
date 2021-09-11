@@ -3,8 +3,8 @@ package com.achtec.tourguide
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.view.animation.AnimationUtils
+import com.achtec.tourguide.Authentication.LoginActivity
 import com.achtec.tourguide.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

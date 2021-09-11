@@ -1,8 +1,9 @@
-package com.achtec.tourguide
+package com.achtec.tourguide.Authentication
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.achtec.tourguide.DashBoard
 import com.achtec.tourguide.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
