@@ -28,7 +28,7 @@
         tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/search_for_tour_guide"
-        android:name="com.achtec.tourguide.Search_for_tour_guide"
+        android:name="com.achtec.tourguide.JetpackNavigation.ui.dashboard.Search_for_tour_guide"
         android:label="fragment_search_for_tour_guide"
         tools:layout="@layout/fragment_search_for_tour_guide" >
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/mapsFragment"
-        android:name="com.achtec.tourguide.MapsFragment"
+        android:name="com.achtec.tourguide.JetpackNavigation.ui.dashboard.MapsFragment"
         android:label="fragment_maps"
         tools:layout="@layout/fragment_maps" />
 </navigation>
