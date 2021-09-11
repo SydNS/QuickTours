@@ -50,6 +50,8 @@
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_sign_up_as_tour_guide.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_sign_up_as_transport_provider.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_tour_destinations.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_tour_guide.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/app_bar_drawer_screen.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/content_drawer_screen.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.196875" />
