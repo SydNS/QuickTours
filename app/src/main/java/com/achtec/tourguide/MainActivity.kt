@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         binding.developer.animation = AnimationUtils.loadAnimation(this, R.anim.bottom_anim)
         binding.enterButton.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
+//            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
             finish()
         }
     }
