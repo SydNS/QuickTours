@@ -128,6 +128,9 @@ ordersList!!.add(TourguideModel(R.drawable.tg2, "Roy", "UBK 167A", "Ntinda", "07
 
         _binding!!.rcvTourguides.adapter=TourguidesAdapter(ordersList!!, this)
         _binding!!.rcvTourguides.layoutManager=LinearLayoutManager(requireActivity())
+        _binding!!.tgSearchBtn.setOnClickListener {
+            Toast.makeText(requireActivity(),"searc guides",Toast.LENGTH_SHORT).show()
+        }
         return root
     }
 
