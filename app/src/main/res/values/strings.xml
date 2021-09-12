@@ -101,4 +101,6 @@
     <string name="_0771234567">0780134747</string>
     <string name="user_id_number">TG-01</string>
     <string name="_5_mins_away_from_you">5 mins away from you</string>
+    <string name="menu_wallet">Wallet</string>
+    <string name="menu_profile">Profile</string>
 </resources>
