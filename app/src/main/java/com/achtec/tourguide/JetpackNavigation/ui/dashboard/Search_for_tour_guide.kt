@@ -2,6 +2,8 @@ package com.achtec.tourguide.JetpackNavigation.ui.dashboard
 
 import android.app.ProgressDialog
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -131,17 +133,17 @@ ordersList!!.add(TourguideModel(R.drawable.tg2, "Roy", "UBK 167A", "Ntinda", "07
         _binding!!.tgSearchBtn.setOnClickListener {
             Toast.makeText(requireActivity(),"searc guides",Toast.LENGTH_SHORT).show()
             val progressBar = ProgressDialog(requireActivity());
-            progressBar.setCancelable(true);
-            progressBar.setMessage("Getting Tour Guides Near You")
-            progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-            progressBar.setProgress(0)
-            progressBar.setMax(100)
-            progressBar.show()
+            Handler(Looper.getMainLooper()).postDelayed({
+                progressBar.setCancelable(true);
+                progressBar.setMessage("Getting Tour Guides Near You")
+                progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                progressBar.setProgress(0)
+                progressBar.setMax(100)
+                progressBar.show()
+            }, 3000)
+
             _binding!!.rcvTourguides.adapter=TourguidesAdapter(ordersList!!, this)
             _binding!!.rcvTourguides.layoutManager=LinearLayoutManager(requireActivity())
-
-
-
 
         }
         return root
