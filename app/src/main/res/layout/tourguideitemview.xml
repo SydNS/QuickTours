@@ -116,6 +116,7 @@
     <ImageView
         android:id="@+id/order_tourguide_choose"
         android:layout_width="30dp"
+        android:elevation="10dp"
         android:layout_height="30dp"
         android:layout_alignParentEnd="true"
         android:layout_marginHorizontal="3dp"
