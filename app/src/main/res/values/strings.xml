@@ -93,4 +93,8 @@
     <string name="menu_slideshow">Slideshow</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="john">jon doe</string>
+    <string name="tourguide">tour guide</string>
+    <string name="sending_messages">text</string>
+    <string name="taken">ocuppied</string>
 </resources>
