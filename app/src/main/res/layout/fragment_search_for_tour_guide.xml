@@ -19,7 +19,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
-        <SearchView
+        <EditText
             android:id="@+id/from_search_field"
             android:layout_width="0dp"
             android:layout_height="40dp"
@@ -27,6 +27,8 @@
             android:layout_marginEnd="8dp"
             android:background="@drawable/search_bg"
             android:elevation="2dp"
+            android:drawableStart="@drawable/search_icon"
+            android:paddingStart="15dp"
             app:layout_constraintBottom_toBottomOf="@+id/textView8"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView8"
@@ -43,7 +45,7 @@
             app:layout_constraintStart_toStartOf="@+id/textView8"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-        <SearchView
+        <EditText
             android:id="@+id/to_searchView"
             android:layout_width="0dp"
             android:layout_height="40dp"
@@ -51,6 +53,8 @@
             android:layout_marginEnd="8dp"
             android:background="@drawable/search_bg"
             android:elevation="2dp"
+            android:drawableStart="@drawable/search_icon"
+            android:paddingStart="15dp"
             app:layout_constraintBottom_toBottomOf="@+id/textView9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView9"
