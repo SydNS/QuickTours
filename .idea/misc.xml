@@ -46,6 +46,7 @@
         <entry key="app/src/main/res/drawable/ic_baseline_message_24.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/order_profile_pic_circle_border.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/phonecall.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/font/caviar_dreams.xml" value="0.22708333333333333" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_drawer_screen.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_edit_tour_guide_profile.xml" value="0.196875" />
