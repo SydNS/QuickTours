@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_search_for_tour_guide_to_nav_home"
             app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_search_for_tour_guide_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
     </fragment>
     <fragment
         android:id="@+id/mapsFragment"
