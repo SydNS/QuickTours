@@ -113,22 +113,19 @@
         tools:ignore="SmallSp" />
 
 
-
     <ImageView
         android:id="@+id/order_tourguide_choose"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_alignParentEnd="true"
         android:layout_marginHorizontal="3dp"
-        android:layout_marginStart="2dp"
         android:contentDescription="@string/taken"
         android:src="@drawable/choose"
-        app:layout_constraintBottom_toBottomOf="@+id/order_tourguide_message"
+        app:layout_constraintBottom_toBottomOf="@+id/order_tourguide_location_now"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toEndOf="@+id/order_tourguide_message"
-        app:layout_constraintTop_toTopOf="@+id/order_tourguide_message"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.748"
+        app:layout_constraintStart_toEndOf="@+id/order_tourguide_plate"
+        app:layout_constraintTop_toTopOf="@+id/order_tourguide_phonenumber_topofJrid" />
 
     <View
         android:id="@+id/view"
