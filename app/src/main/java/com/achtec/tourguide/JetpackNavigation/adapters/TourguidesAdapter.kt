@@ -48,13 +48,12 @@ class TourguidesAdapter(
         val order_tourguide_phonenumber_topofJrid: TextView =
             itemView.findViewById(R.id.order_tourguide_phonenumber_topofJrid)
         val id_number: TextView = itemView.findViewById(R.id.order_tourguide_JRID)
-        val callbutton: ImageView = itemView.findViewById(R.id.order_tourguide_callbutton)
         val order_tourguide_choose: ImageView = itemView.findViewById(R.id.order_tourguide_choose)
 
 
         init {
             itemView.setOnClickListener(this)
-            callbutton.setOnClickListener {
+            order_tourguide_choose.setOnClickListener {
                 val position = adapterPosition
                 if (position != RecyclerView.NO_POSITION) {
                     mlistener.onCallClick(position)
