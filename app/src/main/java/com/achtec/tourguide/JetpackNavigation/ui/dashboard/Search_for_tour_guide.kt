@@ -1,11 +1,13 @@
 package com.achtec.tourguide.JetpackNavigation.ui.dashboard
 
+import android.app.ProgressDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.achtec.tourguide.JetpackNavigation.TourguideModel
 import com.achtec.tourguide.JetpackNavigation.adapters.TourguidesAdapter
@@ -126,10 +128,21 @@ ordersList!!.add(TourguideModel(R.drawable.tg2, "Roy", "UBK 167A", "Ntinda", "07
             )
         )
 
-        _binding!!.rcvTourguides.adapter=TourguidesAdapter(ordersList!!, this)
-        _binding!!.rcvTourguides.layoutManager=LinearLayoutManager(requireActivity())
         _binding!!.tgSearchBtn.setOnClickListener {
             Toast.makeText(requireActivity(),"searc guides",Toast.LENGTH_SHORT).show()
+            val progressBar = ProgressDialog(requireActivity());
+            progressBar.setCancelable(true);
+            progressBar.setMessage("Getting Tour Guides Near You")
+            progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            progressBar.setProgress(0)
+            progressBar.setMax(100)
+            progressBar.show()
+            _binding!!.rcvTourguides.adapter=TourguidesAdapter(ordersList!!, this)
+            _binding!!.rcvTourguides.layoutManager=LinearLayoutManager(requireActivity())
+
+
+
+
         }
         return root
     }
@@ -168,11 +181,15 @@ ordersList!!.add(TourguideModel(R.drawable.tg2, "Roy", "UBK 167A", "Ntinda", "07
     }
 
     override fun onCallClick(position: Int) {
-        TODO("Not yet implemented")
+        Toast.makeText(requireActivity(), "you have chosen  ${ordersList?.get(position)?.name} guide", Toast.LENGTH_SHORT).show()
+
+        findNavController().navigate(
+            R.id.action_search_for_tour_guide_to_mapsFragment
+        )
     }
 
     override fun onSelectingRider(position: Int) {
-        Toast.makeText(requireActivity(), "Item $position clicked", Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireActivity(), "Item clicked", Toast.LENGTH_SHORT).show()
 
     }
 }
