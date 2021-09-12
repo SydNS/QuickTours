@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.achtec.tourguide.R
+import com.achtec.tourguide.databinding.FragmentHomeBinding
+import com.achtec.tourguide.databinding.FragmentSearchForTourGuideBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +24,13 @@ class Search_for_tour_guide : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+
+
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
+
+    private var _binding: FragmentSearchForTourGuideBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -34,8 +43,11 @@ class Search_for_tour_guide : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        _binding = FragmentSearchForTourGuideBinding.inflate(inflater, container, false)
+        val root: View = binding.root
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search_for_tour_guide, container, false)
+        return root
     }
 
 
