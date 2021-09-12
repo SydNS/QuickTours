@@ -5,8 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.achtec.tourguide.JetpackNavigation.TourguideModel
+import com.achtec.tourguide.JetpackNavigation.adapters.TourguidesAdapter
 import com.achtec.tourguide.R
-import com.achtec.tourguide.databinding.FragmentHomeBinding
 import com.achtec.tourguide.databinding.FragmentSearchForTourGuideBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -19,10 +22,11 @@ private const val ARG_PARAM2 = "param2"
  * Use the [Search_for_tour_guide.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Search_for_tour_guide : Fragment() {
+class Search_for_tour_guide : Fragment() ,TourguidesAdapter.OnItemClickListener{
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var ordersList: ArrayList<TourguideModel>? = null
 
 
 
@@ -42,11 +46,88 @@ class Search_for_tour_guide : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentSearchForTourGuideBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        val root: View = _binding!!.root
         // Inflate the layout for this fragment
+
+        ordersList = ArrayList()
+        ordersList!!.add(TourguideModel(R.drawable.tg2, "Roy", "UBK 167A", "Ntinda", "0780134747","NO. 1233"))
+        ordersList!!.add(TourguideModel(R.drawable.tg1, "Prince", "UBK 183A", "Ntinda", "0780134747","NO. 1233"))
+        ordersList!!.add(TourguideModel(R.drawable.tg2, "Dean", "UBK 113A", "Ntinda", "0780134747","NO. 1233"))
+        ordersList!!.add(TourguideModel(R.drawable.tg1, "Roy", "UBK 167A", "Ntinda", "0780134747","NO. 1233"))
+        ordersList!!.add(TourguideModel(R.drawable.tg2, "Prince", "UBK 183A", "Ntinda", "0780134747","NO. 1233"))
+        ordersList!!.add(TourguideModel(R.drawable.tg1, "Dean", "UBK 113A", "Ntinda", "0780134747","NO. 1233"))
+ordersList!!.add(TourguideModel(R.drawable.tg2, "Roy", "UBK 167A", "Ntinda", "0780134747","NO. 1233"))
+        ordersList!!.add(TourguideModel(R.drawable.tg1, "Prince", "UBK 183A", "Ntinda", "0780134747","NO. 1233"))
+        ordersList!!.add(TourguideModel(R.drawable.tg2, "Dean", "UBK 113A", "Ntinda", "0780134747","NO. 1233"))
+        ordersList!!.add(TourguideModel(R.drawable.tg1, "Roy", "UBK 167A", "Ntinda", "0780134747","NO. 1233"))
+        ordersList!!.add(TourguideModel(R.drawable.tg2, "Prince", "UBK 183A", "Ntinda", "0780134747","NO. 1233"))
+        ordersList!!.add(TourguideModel(R.drawable.tg1, "Dean", "UBK 113A", "Ntinda", "0780134747","NO. 1233"))
+        ordersList!!.add(
+            TourguideModel(
+                R.drawable.tg2,
+                "Roy",
+                "UBK 167A",
+                "Ntinda",
+                "0780134747",
+                "NO. 1233"
+            )
+        )
+        ordersList!!.add(
+            TourguideModel(
+                R.drawable.tg1,
+                "Prince",
+                "UBK 183A",
+                "Ntinda",
+                "0780134747",
+                "NO. 1233"
+            )
+        )
+        ordersList!!.add(
+            TourguideModel(
+                R.drawable.tg2,
+                "Dean",
+                "UBK 113A",
+                "Ntinda",
+                "0780134747",
+                "NO. 1233"
+            )
+        )
+        ordersList!!.add(
+            TourguideModel(
+                R.drawable.tg1,
+                "Roy",
+                "UBK 167A",
+                "Ntinda",
+                "0780134747",
+                "NO. 1233"
+            )
+        )
+        ordersList!!.add(
+            TourguideModel(
+                R.drawable.tg2,
+                "Prince",
+                "UBK 183A",
+                "Ntinda",
+                "0780134747",
+                "NO. 1233"
+            )
+        )
+        ordersList!!.add(
+            TourguideModel(
+                R.drawable.tg1,
+                "Dean",
+                "UBK 113A",
+                "Ntinda",
+                "0780134747",
+                "NO. 1233"
+            )
+        )
+
+        _binding!!.rcvTourguides.adapter=TourguidesAdapter(ordersList!!, this)
+        _binding!!.rcvTourguides.layoutManager=LinearLayoutManager(requireActivity())
         return root
     }
 
@@ -71,5 +152,24 @@ class Search_for_tour_guide : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onItemClick(position: Int) {
+        Toast.makeText(requireActivity(), "Item $position clicked", Toast.LENGTH_SHORT).show()
+
+//        when (position) {
+//            0 -> startActivity(Intent(activity, WalletActivity::class.java))
+//            8 -> println("no")
+//            else -> println("maybe")
+//        }
+    }
+
+    override fun onCallClick(position: Int) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onSelectingRider(position: Int) {
+        Toast.makeText(requireActivity(), "Item $position clicked", Toast.LENGTH_SHORT).show()
+
     }
 }
