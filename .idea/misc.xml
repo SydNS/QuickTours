@@ -56,7 +56,7 @@
         <entry key="app/src/main/res/layout/content_drawer_screen.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.196875" />
-        <entry key="app/src/main/res/layout/fragment_search_for_tour_guide.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_search_for_tour_guide.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/header.xml" value="0.196875" />
         <entry key="app/src/main/res/menu/activity_drawer_screen_drawer.xml" value="0.196875" />
