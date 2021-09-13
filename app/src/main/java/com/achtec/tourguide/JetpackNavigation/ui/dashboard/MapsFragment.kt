@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.achtec.tourguide.R
 import com.achtec.tourguide.databinding.FragmentMapsBinding
 
@@ -42,6 +43,7 @@ class MapsFragment : Fragment() {
 
         fragmentMapsBinding.orderButton.setOnClickListener {
 
+            findNavController().navigate(R.id.startTour)
         }
 
         return fragmentMapsBinding.root
