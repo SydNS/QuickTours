@@ -58,7 +58,7 @@
     <fragment
         android:id="@+id/mapsFragment"
         android:name="com.achtec.tourguide.JetpackNavigation.ui.dashboard.MapsFragment"
-        android:label="fragment_maps"
+        android:label="Make A Request"
         tools:layout="@layout/fragment_maps" >
         <action
             android:id="@+id/action_mapsFragment_to_startTour"
@@ -67,7 +67,7 @@
     <fragment
         android:id="@+id/startTour"
         android:name="com.achtec.tourguide.StartTour"
-        android:label="fragment_start_tour"
+        android:label="Let's Start your Tour"
         tools:layout="@layout/fragment_start_tour" >
         <action
             android:id="@+id/action_startTour_to_nav_home"
