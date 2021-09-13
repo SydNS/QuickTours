@@ -144,4 +144,9 @@
             android:id="@+id/action_signupTourguide_to_tourGuidehome"
             app:destination="@id/tourGuidehome" />
     </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.achtec.tourguide.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" />
 </navigation>
