@@ -66,6 +66,7 @@
         <entry key="app/src/main/res/layout/fragment_maps.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_search_for_tour_guide.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/fragment_start_tour.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_tour_guidehome.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/header.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/tourguideitemview.xml" value="0.33" />
