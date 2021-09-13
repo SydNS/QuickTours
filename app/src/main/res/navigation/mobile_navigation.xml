@@ -13,19 +13,36 @@
         <action
             android:id="@+id/action_nav_home_to_search_for_tour_guide"
             app:destination="@id/search_for_tour_guide" />
+        <action
+            android:id="@+id/action_nav_home_to_tourGuidehome"
+            app:destination="@id/tourGuidehome" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_slideshow"
+            app:destination="@id/nav_slideshow" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_gallery"
+            app:destination="@id/nav_gallery" />
     </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.achtec.tourguide.JetpackNavigation.ui.gallery.ProfileFragment"
+        android:name="com.achtec.tourguide.JetpackNavigation.ui.profile.ProfileFragment"
         android:label="@string/menu_profile"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_nav_gallery_to_nav_slideshow"
+            app:destination="@id/nav_slideshow" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.achtec.tourguide.JetpackNavigation.ui.slideshow.WalletFragment"
+        android:name="com.achtec.tourguide.JetpackNavigation.ui.wallet.WalletFragment"
         android:label="@string/menu_wallet"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_slideshow" >
+        <action
+            android:id="@+id/action_nav_slideshow_to_nav_gallery"
+            app:destination="@id/nav_gallery" />
+    </fragment>
     <fragment
         android:id="@+id/search_for_tour_guide"
         android:name="com.achtec.tourguide.JetpackNavigation.ui.dashboard.Search_for_tour_guide"
@@ -42,5 +59,26 @@
         android:id="@+id/mapsFragment"
         android:name="com.achtec.tourguide.JetpackNavigation.ui.dashboard.MapsFragment"
         android:label="fragment_maps"
-        tools:layout="@layout/fragment_maps" />
+        tools:layout="@layout/fragment_maps" >
+        <action
+            android:id="@+id/action_mapsFragment_to_startTour"
+            app:destination="@id/startTour" />
+    </fragment>
+    <fragment
+        android:id="@+id/startTour"
+        android:name="com.achtec.tourguide.StartTour"
+        android:label="fragment_start_tour"
+        tools:layout="@layout/fragment_start_tour" >
+        <action
+            android:id="@+id/action_startTour_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_startTour_to_search_for_tour_guide"
+            app:destination="@id/search_for_tour_guide" />
+    </fragment>
+    <fragment
+        android:id="@+id/tourGuidehome"
+        android:name="com.achtec.tourguide.TourGuidehome"
+        android:label="fragment_tour_guidehome"
+        tools:layout="@layout/fragment_tour_guidehome" />
 </navigation>
