@@ -57,6 +57,8 @@
         <entry key="app/src/main/res/layout/activity_sign_up_as_transport_provider.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_tour_destinations.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_tour_guide.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_tour_guide_profile.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_wallet.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/app_bar_drawer_screen.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/content_drawer_screen.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.196875" />
@@ -64,11 +66,12 @@
         <entry key="app/src/main/res/layout/fragment_maps.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_search_for_tour_guide.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/fragment_tour_guidehome.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/header.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/tourguideitemview.xml" value="0.33" />
-        <entry key="app/src/main/res/menu/activity_drawer_screen_drawer.xml" value="0.196875" />
+        <entry key="app/src/main/res/menu/activity_drawer_screen_drawer.xml" value="0.25" />
         <entry key="app/src/main/res/menu/drawer_screen.xml" value="0.196875" />
-        <entry key="app/src/main/res/menu/main_menu.xml" value="0.75" />
+        <entry key="app/src/main/res/menu/main_menu.xml" value="0.5" />
       </map>
     </option>
   </component>
