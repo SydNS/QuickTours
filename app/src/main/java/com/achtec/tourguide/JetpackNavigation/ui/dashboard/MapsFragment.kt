@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.achtec.tourguide.R
+import com.achtec.tourguide.databinding.FragmentMapsBinding
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -15,6 +16,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
 class MapsFragment : Fragment() {
+    lateinit var fragmentMapsBinding: FragmentMapsBinding
 
     private val callback = OnMapReadyCallback { googleMap ->
         /**
@@ -36,7 +38,13 @@ class MapsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_maps, container, false)
+        fragmentMapsBinding= FragmentMapsBinding.inflate(inflater, container, false)
+
+        fragmentMapsBinding.orderButton.setOnClickListener {
+
+        }
+
+        return fragmentMapsBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
