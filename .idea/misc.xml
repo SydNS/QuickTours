@@ -54,6 +54,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_sign_up_as_tour_guide.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_sign_up_as_tourist.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_sign_up_as_transport_provider.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_tour_destinations.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_tour_guide.xml" value="0.196875" />
@@ -63,8 +64,13 @@
         <entry key="app/src/main/res/layout/content_drawer_screen.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_maps.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/fragment_reciept.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_search_for_tour_guide.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_signup.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/fragment_signup_tourguide.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/fragment_signup_tourist.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_start_tour.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_tour_guidehome.xml" value="0.196875" />
