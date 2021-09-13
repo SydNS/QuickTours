@@ -69,66 +69,7 @@ ordersList!!.add(TourguideModel(R.drawable.tg2, "Roy", "UBK 167A", "Ntinda", "07
         ordersList!!.add(TourguideModel(R.drawable.tg1, "Roy", "UBK 167A", "Ntinda", "0780134747","NO. 1233"))
         ordersList!!.add(TourguideModel(R.drawable.tg2, "Prince", "UBK 183A", "Ntinda", "0780134747","NO. 1233"))
         ordersList!!.add(TourguideModel(R.drawable.tg1, "Dean", "UBK 113A", "Ntinda", "0780134747","NO. 1233"))
-        ordersList!!.add(
-            TourguideModel(
-                R.drawable.tg2,
-                "Roy",
-                "UBK 167A",
-                "Ntinda",
-                "0780134747",
-                "NO. 1233"
-            )
-        )
-        ordersList!!.add(
-            TourguideModel(
-                R.drawable.tg1,
-                "Prince",
-                "UBK 183A",
-                "Ntinda",
-                "0780134747",
-                "NO. 1233"
-            )
-        )
-        ordersList!!.add(
-            TourguideModel(
-                R.drawable.tg2,
-                "Dean",
-                "UBK 113A",
-                "Ntinda",
-                "0780134747",
-                "NO. 1233"
-            )
-        )
-        ordersList!!.add(
-            TourguideModel(
-                R.drawable.tg1,
-                "Roy",
-                "UBK 167A",
-                "Ntinda",
-                "0780134747",
-                "NO. 1233"
-            )
-        )
-        ordersList!!.add(
-            TourguideModel(
-                R.drawable.tg2,
-                "Prince",
-                "UBK 183A",
-                "Ntinda",
-                "0780134747",
-                "NO. 1233"
-            )
-        )
-        ordersList!!.add(
-            TourguideModel(
-                R.drawable.tg1,
-                "Dean",
-                "UBK 113A",
-                "Ntinda",
-                "0780134747",
-                "NO. 1233"
-            )
-        )
+
 
         _binding!!.tgSearchBtn.setOnClickListener {
             Toast.makeText(requireActivity(),"searc guides",Toast.LENGTH_SHORT).show()
@@ -183,15 +124,15 @@ ordersList!!.add(TourguideModel(R.drawable.tg2, "Roy", "UBK 167A", "Ntinda", "07
     }
 
     override fun onCallClick(position: Int) {
-        Toast.makeText(requireActivity(), "you have chosen  ${ordersList?.get(position)?.name} guide", Toast.LENGTH_SHORT).show()
 
-        findNavController().navigate(
-            R.id.action_search_for_tour_guide_to_mapsFragment
-        )
+        Toast.makeText(requireActivity(), "Item clicked", Toast.LENGTH_SHORT).show()
+
     }
 
     override fun onSelectingRider(position: Int) {
-        Toast.makeText(requireActivity(), "Item clicked", Toast.LENGTH_SHORT).show()
-
+        Toast.makeText(requireActivity(), "you have chosen  ${ordersList?.get(position)?.name} guide", Toast.LENGTH_SHORT).show()
+        findNavController().navigate(
+            R.id.action_search_for_tour_guide_to_mapsFragment
+        )
     }
 }
