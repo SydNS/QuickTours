@@ -148,5 +148,21 @@
         android:id="@+id/splashFragment"
         android:name="com.achtec.tourguide.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" />
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_splashFragment_to_tourGuidehome"
+            app:destination="@id/tourGuidehome" />
+        <action
+            android:id="@+id/action_splashFragment_to_loginFrag"
+            app:destination="@id/loginFrag" />
+        <action
+            android:id="@+id/action_splashFragment_to_signupTourist"
+            app:destination="@id/signupTourist" />
+        <action
+            android:id="@+id/action_splashFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+    </fragment>
 </navigation>
