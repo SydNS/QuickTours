@@ -103,4 +103,7 @@
     <string name="_5_mins_away_from_you">5 mins away from you</string>
     <string name="menu_wallet">Wallet</string>
     <string name="menu_profile">Profile</string>
+    <string name="reciept">RECIEPT</string>
+    <string name="end_trip">END TRIP</string>
+    <string name="start_trip">START TRIP</string>
 </resources>
