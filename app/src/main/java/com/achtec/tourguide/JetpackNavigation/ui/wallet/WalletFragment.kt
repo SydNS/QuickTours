@@ -1,4 +1,4 @@
-package com.achtec.tourguide.JetpackNavigation.ui.slideshow
+package com.achtec.tourguide.JetpackNavigation.ui.wallet
 
 import android.os.Bundle
 import android.view.LayoutInflater
