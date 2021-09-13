@@ -1,4 +1,4 @@
-package com.achtec.tourguide.JetpackNavigation.ui.slideshow
+package com.achtec.tourguide.JetpackNavigation.ui.wallet
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

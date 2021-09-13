@@ -1,4 +1,4 @@
-package com.achtec.tourguide.JetpackNavigation.ui.gallery
+package com.achtec.tourguide.JetpackNavigation.ui.profile
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
