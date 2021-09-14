@@ -1,5 +1,7 @@
+@file:Suppress("DEPRECATION")
 package com.achtec.tourguide.Authentication
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,7 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
-import com.achtec.tourguide.R
+import com.achtec.tourguide.JetpackNavigation.MyDrawerController
+import com.achtec.tourguide.databinding.FragmentLoginBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,20 +31,32 @@ class LoginFrag : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    lateinit var binding: FragmentLoginBinding
+    private lateinit var auth: FirebaseAuth;
+// ...
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+// Initialize Firebase Auth
+        auth = Firebase.auth
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        binding= FragmentLoginBinding.inflate(layoutInflater)
+        binding.logInBtn.setOnClickListener {
+
+        }
+        return binding.root
     }
 
 
@@ -54,7 +73,7 @@ class LoginFrag : Fragment() {
         (requireActivity() as AppCompatActivity).supportActionBar?.show()
     }
 
-    
+
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -73,5 +92,23 @@ class LoginFrag : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+
+    //    hiding the drawer in the specific fragments
+    private var myInterface: MyDrawerController? = null
+
+    override fun onAttach(activity: Activity) {
+        super.onAttach(activity)
+        myInterface = try {
+            activity as MyDrawerController
+        } catch (e: ClassCastException) {
+            throw ClassCastException("$activity must implement MyInterface")
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        myInterface!!.unlockDrawer()
     }
 }
