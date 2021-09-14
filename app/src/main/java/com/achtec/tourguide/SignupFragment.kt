@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,6 +37,19 @@ class SignupFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_signup, container, false)
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+        val supportActionBar: ActionBar? = (requireActivity() as AppCompatActivity).supportActionBar
+        supportActionBar?.hide()
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+        (requireActivity() as AppCompatActivity).supportActionBar?.show()
     }
 
     companion object {
