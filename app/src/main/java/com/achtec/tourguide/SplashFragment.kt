@@ -51,9 +51,8 @@ class SplashFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_splash, container, false)
+    ): View {
+
         // Inflate the layout for requireActivity() fragment
         binding = FragmentSplashBinding.inflate(layoutInflater)
 
@@ -77,7 +76,7 @@ class SplashFragment : Fragment() {
 
         Handler().postDelayed({
             checkUserSignupStatus()
-        }, 3000)
+        }, 4000)
 
 
 
