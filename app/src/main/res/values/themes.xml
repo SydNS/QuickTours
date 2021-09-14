@@ -15,6 +15,9 @@
         <item name="android:windowContentTransitions">true</item>
         <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
 
+        <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>
+        <item name="android:windowTranslucentNavigation" tools:targetApi="kitkat">true</item>
+
         <item name="fontFamily">@font/caviar_dreams</item>
     </style>
 
@@ -83,6 +86,7 @@
     <style name="Theme.TourGuide.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="background">@drawable/activitybacground</item>
     </style>
 
     <style name="Theme.TourGuide.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
