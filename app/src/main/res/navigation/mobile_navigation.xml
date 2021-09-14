@@ -98,7 +98,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFrag"
-        android:name="com.achtec.tourguide.LoginFrag"
+        android:name="com.achtec.tourguide.Authentication.LoginFrag"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -110,7 +110,7 @@
     </fragment>
     <fragment
         android:id="@+id/signupFragment"
-        android:name="com.achtec.tourguide.SignupFragment"
+        android:name="com.achtec.tourguide.Authentication.SignupFragment"
         android:label="fragment_signup"
         tools:layout="@layout/fragment_signup" >
         <action
@@ -122,7 +122,7 @@
     </fragment>
     <fragment
         android:id="@+id/signupTourist"
-        android:name="com.achtec.tourguide.SignupTourist"
+        android:name="com.achtec.tourguide.Authentication.SignupTourist"
         android:label="fragment_signup_tourist"
         tools:layout="@layout/fragment_signup_tourist" >
         <action
@@ -137,7 +137,7 @@
     </fragment>
     <fragment
         android:id="@+id/signupTourguide"
-        android:name="com.achtec.tourguide.SignupTourguide"
+        android:name="com.achtec.tourguide.Authentication.SignupTourguide"
         android:label="fragment_signup_tourguide"
         tools:layout="@layout/fragment_signup_tourguide" >
         <action
