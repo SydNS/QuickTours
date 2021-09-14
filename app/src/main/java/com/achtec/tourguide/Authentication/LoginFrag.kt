@@ -1,7 +1,9 @@
 @file:Suppress("DEPRECATION")
+
 package com.achtec.tourguide.Authentication
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,6 +16,9 @@ import com.achtec.tourguide.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import android.content.DialogInterface
+import android.widget.TextView
+import android.widget.Toast
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -46,19 +51,52 @@ class LoginFrag : Fragment() {
     }
 
 
+    lateinit var uemail: TextView
+    lateinit var upasswd: TextView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         // Inflate the layout for this fragment
-        binding= FragmentLoginBinding.inflate(layoutInflater)
+        binding = FragmentLoginBinding.inflate(layoutInflater)
         binding.logInBtn.setOnClickListener {
 
+            var useremail = uemail.text.toString().trim()
+            var userpassword = upasswd.text.toString().trim()
+
+            if (
+                useremail.isNotEmpty() &&
+                userpassword.isNotEmpty()
+            ) {
+                auth.signInWithEmailAndPassword(uemail, upasswd)
+                    .addOnCompleteListener {
+                        if (it.isSuccessful) {
+
+                            Toast.makeText(requireActivity(), "Succes", Toast.LENGTH_SHORT).show()
+
+                        } else {
+
+                            AlertDialog.Builder(requireActivity())
+                                .setTitle("Login Not Successful")
+                                .setMessage("kindly check your creds")
+                                .setCancelable(false)
+                                .setPositiveButton(
+                                    "ok"
+                                ) { dialog, which ->
+                                    {
+                                        binding.lgEmail.text.clear()
+                                        binding.lgPassword.text?.clear()
+                                    }
+                                    // Whatever...
+                                }.show()
+
+                        }
+                    }
+            }
         }
         return binding.root
     }
-
 
 
     override fun onResume() {
