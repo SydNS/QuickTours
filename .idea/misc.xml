@@ -42,10 +42,14 @@
         <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/sign_up_activity.xml" value="0.2" />
         <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/top_up_pop_up.xml" value="0.33" />
         <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/menu/main_menu.xml" value="0.22" />
+        <entry key="app/src/main/res/drawable/activitybacground.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/bgtint.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/choose.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/ic_baseline_message_24.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/order_profile_pic_circle_border.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/overlaybg.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/phonecall.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/view_bg.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/font/caviar_dreams.xml" value="0.22708333333333333" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_drawer_screen.xml" value="0.196875" />
@@ -72,6 +76,7 @@
         <entry key="app/src/main/res/layout/fragment_signup_tourguide.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_signup_tourist.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_start_tour.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_tour_guidehome.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/header.xml" value="0.196875" />
