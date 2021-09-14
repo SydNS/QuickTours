@@ -79,7 +79,7 @@ class LoginFrag : Fragment() {
 
                                 AlertDialog.Builder(requireActivity())
                                     .setTitle("Login Not Successful")
-                                    .setMessage("kindly check your creds")
+                                    .setMessage("${it.exception?.message}")
                                     .setCancelable(false)
                                     .setPositiveButton(
                                         "ok"
