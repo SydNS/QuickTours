@@ -62,37 +62,46 @@ class LoginFrag : Fragment() {
         binding = FragmentLoginBinding.inflate(layoutInflater)
         binding.logInBtn.setOnClickListener {
 
-            var useremail = uemail.text.toString().trim()
-            var userpassword = upasswd.text.toString().trim()
+            val useremail = uemail.text.toString().trim()
+            val userpassword = upasswd.text.toString().trim()
 
-            if (
+            when {
                 useremail.isNotEmpty() &&
-                userpassword.isNotEmpty()
-            ) {
-                auth.signInWithEmailAndPassword(uemail, upasswd)
-                    .addOnCompleteListener {
-                        if (it.isSuccessful) {
+                        userpassword.isNotEmpty() -> {
+                    auth.signInWithEmailAndPassword(useremail, userpassword)
+                        .addOnCompleteListener {
+                            if (it.isSuccessful) {
 
-                            Toast.makeText(requireActivity(), "Succes", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(requireActivity(), "Succes", Toast.LENGTH_SHORT)
+                                    .show()
 
-                        } else {
+                            } else {
 
-                            AlertDialog.Builder(requireActivity())
-                                .setTitle("Login Not Successful")
-                                .setMessage("kindly check your creds")
-                                .setCancelable(false)
-                                .setPositiveButton(
-                                    "ok"
-                                ) { dialog, which ->
-                                    {
-                                        binding.lgEmail.text.clear()
-                                        binding.lgPassword.text?.clear()
-                                    }
-                                    // Whatever...
-                                }.show()
+                                AlertDialog.Builder(requireActivity())
+                                    .setTitle("Login Not Successful")
+                                    .setMessage("kindly check your creds")
+                                    .setCancelable(false)
+                                    .setPositiveButton(
+                                        "ok"
+                                    ) { dialog, which ->
+                                        {
+                                            binding.lgEmail.text.clear()
+                                            binding.lgPassword.text?.clear()
+                                        }
+                                        // Whatever...
+                                    }.show()
 
+                            }
                         }
-                    }
+                }
+                useremail.isNotEmpty() &&
+                        userpassword.isEmpty() -> {
+                    upasswd.error = "Enter password"
+                }
+                useremail.isEmpty() &&
+                        userpassword.isNotEmpty() -> {
+                    uemail.error = "Enter email"
+                }
             }
         }
         return binding.root
