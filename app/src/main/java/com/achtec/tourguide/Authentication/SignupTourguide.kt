@@ -54,6 +54,7 @@ class SignupTourguide : Fragment() {
     lateinit var userpassword: TextInputLayout
     private lateinit var userpassword2: TextInputLayout
     lateinit var userphone: TextInputLayout
+    lateinit var login_text: LinearLayout
 
     //declaring the radio views for grabbing the decision from usrs
     lateinit var userselection: RadioGroup
@@ -109,7 +110,12 @@ class SignupTourguide : Fragment() {
         userradiobtn = v.findViewById(R.id.radioButtonUser)
         delivererradiobtn = v.findViewById(R.id.radioButtonDeliverer)
         userselection = v.findViewById(R.id.userselection)
+        login_text = v.findViewById(R.id.login_text)
 
+        login_text.setOnClickListener {
+            findNavController().navigate(R.id.action_signupTourguide_to_loginFrag)
+
+        }
 
 //        setting the action onclicking the button
         signupbtn.setOnClickListener {
@@ -144,60 +150,63 @@ class SignupTourguide : Fragment() {
 //         flow structure controlled here
 
             //checking if the value from the email field is empty or  not
-            when {
-                uname.isEmpty() -> {
-                    username.isErrorEnabled = true
-                    username.error = getString(R.string.enteruserameneeded)
-                }
-
-                uemail.isEmpty() -> {
-                    useremailaddress.isErrorEnabled = true
-                    useremailaddress.error = getString(R.string.enteremailaddress)
-                }
-                phone.isEmpty() -> {
-                    userphone.isErrorEnabled = true
-                    userphone.error = getString(R.string.enterphonenumber)
-                }
-                phone.isNotEmpty() && phone.length != 10 -> {
-
-                    userphone.isErrorEnabled = true
-                    userphone.error = getString(R.string.enter10digitnumbers)
-                }
-
-                password.isEmpty() -> {
-                    signupbanner.text =
-                        getString(R.string.confirmpassword)
-                    userpassword.isErrorEnabled = true
-                    userpassword.error = getString(R.string.kindlyenterpassword)
-                }
-                password.isNotEmpty() && password.length < 8 -> {
-                    signupbanner.text = getString(R.string.eightcharacterlong)
-                    userpassword.isErrorEnabled = true
-                    userpassword.error = getString(R.string.eightcharacterlong)
-                }
-                password2.isEmpty() -> {
-                    signupbanner.text = getString(R.string.confirmpassword)
-                    userpassword2.isErrorEnabled = true
-                    userpassword2.error = getString(R.string.kindlyconfirm)
-                }
+//            when {
+//                uname.isEmpty() -> {
+//                    username.isErrorEnabled = true
+//                    username.error = getString(R.string.enteruserameneeded)
+//                }
 //
-                password != password2 -> {
-                    signupbanner.text = getString(R.string.matchingpasswordsneeded)
-                    userpassword2.isErrorEnabled = true
-                    userpassword2.error = getString(R.string.matchingpasswordsneeded)
-                }
-                userdecision.isEmpty() -> {
-                    userradiobtn.error = getString(R.string.radiobtnusertype)
-                    delivererradiobtn.error = getString(R.string.radiobtnusertype)
-                }
+//                uemail.isEmpty() -> {
+//                    useremailaddress.isErrorEnabled = true
+//                    useremailaddress.error = getString(R.string.enteremailaddress)
+//                }
+//                phone.isEmpty() -> {
+//                    userphone.isErrorEnabled = true
+//                    userphone.error = getString(R.string.enterphonenumber)
+//                }
+//                phone.isNotEmpty() && phone.length != 10 -> {
+//
+//                    userphone.isErrorEnabled = true
+//                    userphone.error = getString(R.string.enter10digitnumbers)
+//                }
+//
+//                password.isEmpty() -> {
+//                    signupbanner.text =
+//                        getString(R.string.confirmpassword)
+//                    userpassword.isErrorEnabled = true
+//                    userpassword.error = getString(R.string.kindlyenterpassword)
+//                }
+//                password.isNotEmpty() && password.length < 8 -> {
+//                    signupbanner.text = getString(R.string.eightcharacterlong)
+//                    userpassword.isErrorEnabled = true
+//                    userpassword.error = getString(R.string.eightcharacterlong)
+//                }
+//                password2.isEmpty() -> {
+//                    signupbanner.text = getString(R.string.confirmpassword)
+//                    userpassword2.isErrorEnabled = true
+//                    userpassword2.error = getString(R.string.kindlyconfirm)
+//                }
+////
+//                password != password2 -> {
+//                    signupbanner.text = getString(R.string.matchingpasswordsneeded)
+//                    userpassword2.isErrorEnabled = true
+//                    userpassword2.error = getString(R.string.matchingpasswordsneeded)
+//                }
+//                userdecision.isEmpty() -> {
+//                    userradiobtn.error = getString(R.string.radiobtnusertype)
+//                    delivererradiobtn.error = getString(R.string.radiobtnusertype)
+//                }
+//
+//                else -> {
+//                    signupbanner.text = getString(R.string.thanks)
+////            method creating the user with the email & password provided
+//                    createAccount(uemail, password, v, userdecision)
+//
+//                }
 
-                else -> {
-                    signupbanner.text = getString(R.string.thanks)
-//            method creating the user with the email & password provided
-                    createAccount(uemail, password, v, userdecision)
 
-                }
-            }
+            findNavController()
+                .navigate(R.id.action_signupTourguide_to_nav_home)
         }
 
         return v
