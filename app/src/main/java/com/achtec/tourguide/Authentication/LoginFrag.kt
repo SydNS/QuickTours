@@ -4,6 +4,8 @@ package com.achtec.tourguide.Authentication
 
 import android.app.Activity
 import android.app.AlertDialog
+import android.app.ProgressDialog
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -17,8 +19,16 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import android.content.DialogInterface
+import android.graphics.Color
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.fragment.NavHostFragment
+import com.achtec.tourguide.R
+import com.google.android.material.textfield.TextInputLayout
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -32,79 +42,147 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class LoginFrag : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    lateinit var binding: FragmentLoginBinding
-    private lateinit var auth: FirebaseAuth;
-// ...
+    lateinit var loginbtn: Button
+    lateinit var loginbanner: TextView
+    lateinit var login_emailaddress: TextInputLayout
+    lateinit var login_password: TextInputLayout
+
+    lateinit var uemail: String
+    lateinit var upassd: String
+
+
+    //firebase variables
+    private lateinit var auth: FirebaseAuth
+    private lateinit var firebaseAuthListner: FirebaseAuth.AuthStateListener
+    private lateinit var firebasedatabase: FirebaseDatabase
+    private lateinit var customersDatabaseRef: DatabaseReference
+    private lateinit var loadingBar: ProgressDialog
+    private lateinit var currentUser: FirebaseUser
+    private lateinit var currentUserId: String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
 // Initialize Firebase Auth
-        auth = Firebase.auth
+
+        firebaseAuthListner = FirebaseAuth.AuthStateListener {
+            currentUser = FirebaseAuth.getInstance().currentUser!!
+
+            NavHostFragment.findNavController(this)
+                .navigate(R.id.action_loginFrag_to_tourGuidehome)
+        }
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+
+
+        auth = FirebaseAuth.getInstance()
+        firebasedatabase = FirebaseDatabase.getInstance()
+
+        loadingBar = ProgressDialog(activity)
+
+        val v: View = inflater.inflate(R.layout.fragment_login, container, false)
+        loginbtn = v.findViewById(R.id.loginbtn)
+        loginbanner = v.findViewById(R.id.loginbanner)
+        login_emailaddress = v.findViewById(R.id.login_emailaddress)
+        login_password = v.findViewById(R.id.login_password)
+
+        login(loginbtn, login_emailaddress, login_password, loginbanner)
+
+
+        return v
+    }
+
+    private fun login(
+        v: Button,
+        em: TextInputLayout,
+        pswd: TextInputLayout,
+        loginbanner: TextView
+    ) {
+        v.setOnClickListener {
+
+//            setting the errors flags to non
+            em.isErrorEnabled = false
+            em.error = ""
+            pswd.isErrorEnabled = false
+            pswd.error = ""
+
+            uemail = login_emailaddress.editText?.text.toString().trim()
+            upassd = login_password.editText?.text.toString().trim()
+
+            //checking if the value from the email field is empty or  not
+            when {
+                uemail.isEmpty() -> {
+                    em.isErrorEnabled = true
+                    em.error = getString(R.string.enteremailaddress)
+                }
+                upassd.isEmpty() -> {
+                    pswd.isErrorEnabled = true
+                    pswd.error = getString(R.string.kindlyenterpassword)
+                }
+                upassd.isNotEmpty() && upassd.length < 8 -> {
+                    pswd.isErrorEnabled = true
+                    pswd.error = getString(R.string.eightcharacterlong)
+                }
+
+                else -> {
+//            method logging in the user with the email & password provided
+                    loginusers(uemail, upassd, loginbanner)
+
+
+                }
+            }
+
+
+        }
+    }
+
+    private fun loginusers(
+        uemail: String,
+        upassd: String,
+        loginbanner: TextView
+    ) {
+        auth.signInWithEmailAndPassword(uemail, upassd).addOnCompleteListener {
+            if (it.isSuccessful) {
+
+                if (WhatTypeOfUser() == "Tourist") {
+                    NavHostFragment
+                        .findNavController(this)
+                        .navigate(R.id.action_loginFrag_to_tourGuidehome)
+
+                } else {
+                    NavHostFragment.findNavController(this)
+                        .navigate(R.id.action_loginFrag_to_nav_home)
+                }
+                Toast.makeText(requireActivity(), "${auth.currentUser?.email}", Toast.LENGTH_LONG)
+                    .show()
+            } else {
+                loginbanner.text = it.exception?.message.toString()
+                Toast.makeText(
+                    requireActivity(),
+                    it.exception?.message.toString(),
+                    Toast.LENGTH_LONG
+                ).show()
+
+                Color.parseColor("#FF001E")
+
+
+            }
+        }
     }
 
 
-    lateinit var uemail: TextView
-    lateinit var upasswd: TextView
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-
-        // Inflate the layout for this fragment
-        binding = FragmentLoginBinding.inflate(layoutInflater)
-        binding.logInBtn.setOnClickListener {
-
-            val useremail = uemail.text.toString().trim()
-            val userpassword = upasswd.text.toString().trim()
-
-            when {
-                useremail.isNotEmpty() &&
-                        userpassword.isNotEmpty() -> {
-                    auth.signInWithEmailAndPassword(useremail, userpassword)
-                        .addOnCompleteListener {
-                            if (it.isSuccessful) {
-
-                                Toast.makeText(requireActivity(), "Succes", Toast.LENGTH_SHORT)
-                                    .show()
-
-                            } else {
-
-                                AlertDialog.Builder(requireActivity())
-                                    .setTitle("Login Not Successful")
-                                    .setMessage("${it.exception?.message}")
-                                    .setCancelable(false)
-                                    .setPositiveButton(
-                                        "ok"
-                                    ) { dialog, which ->
-                                        {
-                                            binding.lgEmail.text.clear()
-                                            binding.lgPassword.text?.clear()
-                                        }
-                                        // Whatever...
-                                    }.show()
-
-                            }
-                        }
-                }
-                useremail.isNotEmpty() &&
-                        userpassword.isEmpty() -> {
-                    upasswd.error = "Enter password"
-                }
-                useremail.isEmpty() &&
-                        userpassword.isNotEmpty() -> {
-                    uemail.error = "Enter email"
-                }
-            }
-        }
-        return binding.root
+    private fun WhatTypeOfUser(): String? {
+        val sharedPreferences =
+            requireActivity().getSharedPreferences("OldUserType", Context.MODE_PRIVATE)
+        val isOld = sharedPreferences.getString("Type", null)
+        return isOld
     }
 
 
@@ -121,41 +199,4 @@ class LoginFrag : Fragment() {
     }
 
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment LoginFrag.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            LoginFrag().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
-
-
-    //    hiding the drawer in the specific fragments
-    private var myInterface: MyDrawerController? = null
-
-    override fun onAttach(activity: Activity) {
-        super.onAttach(activity)
-        myInterface = try {
-            activity as MyDrawerController
-        } catch (e: ClassCastException) {
-            throw ClassCastException("$activity must implement MyInterface")
-        }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        myInterface!!.unlockDrawer()
-    }
 }
