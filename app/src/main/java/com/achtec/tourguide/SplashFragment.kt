@@ -1,4 +1,5 @@
 @file:Suppress("DEPRECATION")
+
 package com.achtec.tourguide
 
 import android.Manifest
@@ -19,6 +20,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.NavHostFragment
 import com.achtec.tourguide.databinding.FragmentSplashBinding
+import android.app.Activity
+import com.achtec.tourguide.JetpackNavigation.MyDrawerController
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -70,8 +73,9 @@ class SplashFragment : Fragment() {
 
         binding.enterButton.setOnClickListener {
 
-            Toast.makeText(activity,"rehtrhtr",Toast.LENGTH_SHORT).show()
-            NavHostFragment.findNavController(this).navigate(R.id.action_splashFragment_to_loginFrag)
+//            Toast.makeText(activity,"rehtrhtr",Toast.LENGTH_SHORT).show()
+            NavHostFragment.findNavController(this)
+                .navigate(R.id.action_splashFragment_to_loginFrag)
         }
 
         Handler().postDelayed({
@@ -96,6 +100,7 @@ class SplashFragment : Fragment() {
         super.onStop()
         (requireActivity() as AppCompatActivity).supportActionBar?.show()
     }
+
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -121,8 +126,10 @@ class SplashFragment : Fragment() {
 
     private fun checkUserSignupStatus() {
         when (getSignupStatus()) {
-            true -> NavHostFragment.findNavController(this).navigate(R.id.action_splashFragment_to_loginFrag)
-            false -> NavHostFragment.findNavController(this).navigate(R.id.action_splashFragment_to_signupFragment)
+            true -> NavHostFragment.findNavController(this)
+                .navigate(R.id.action_splashFragment_to_loginFrag)
+            false -> NavHostFragment.findNavController(this)
+                .navigate(R.id.action_splashFragment_to_signupFragment)
         }
     }
 
@@ -134,15 +141,21 @@ class SplashFragment : Fragment() {
     }
 
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>,
-                                            grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int, permissions: Array<String>,
+        grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         when (requestCode) {
             1 -> {
                 if (grantResults.isNotEmpty() && grantResults[0] ==
-                    PackageManager.PERMISSION_GRANTED) {
-                    if ((PackageManager.PERMISSION_GRANTED === ContextCompat.checkSelfPermission(requireActivity(),
-                            Manifest.permission.ACCESS_FINE_LOCATION))) {
+                    PackageManager.PERMISSION_GRANTED
+                ) {
+                    if ((PackageManager.PERMISSION_GRANTED === ContextCompat.checkSelfPermission(
+                            requireActivity(),
+                            Manifest.permission.ACCESS_FINE_LOCATION
+                        ))
+                    ) {
                         Toast.makeText(activity, "Permission Granted", Toast.LENGTH_SHORT).show()
                     }
                 } else {
@@ -153,6 +166,22 @@ class SplashFragment : Fragment() {
             }
         }
 
+    }
 
+    //    hiding the drawer in the specific fragments
+    private var myInterface: MyDrawerController? = null
+
+    override fun onAttach(activity: Activity) {
+        super.onAttach(activity)
+        myInterface = try {
+            activity as MyDrawerController
+        } catch (e: ClassCastException) {
+            throw ClassCastException("$activity must implement MyInterface")
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        myInterface!!.unlockDrawer()
     }
 }
