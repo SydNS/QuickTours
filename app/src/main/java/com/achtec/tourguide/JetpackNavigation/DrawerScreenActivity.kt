@@ -15,10 +15,12 @@ import com.achtec.tourguide.R
 import com.achtec.tourguide.databinding.ActivityDrawerScreenBinding
 
 
-class DrawerScreenActivity : AppCompatActivity() {
+class DrawerScreenActivity : AppCompatActivity(), MyDrawerController{
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityDrawerScreenBinding
+
+    lateinit var drawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +31,7 @@ class DrawerScreenActivity : AppCompatActivity() {
         setSupportActionBar(binding.appBarDrawerScreen.toolbar)
 
 
-        val drawerLayout: DrawerLayout = binding.drawerLayout
+        drawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_drawer_screen)
         // Passing each menu ID as a set of Ids because each
@@ -52,5 +54,17 @@ class DrawerScreenActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_drawer_screen)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    override fun lockDrawer() {
+
+        supportActionBar?.hide();
+        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+    }
+
+    override fun unlockDrawer() {
+
+        supportActionBar?.show();
+        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
     }
 }
