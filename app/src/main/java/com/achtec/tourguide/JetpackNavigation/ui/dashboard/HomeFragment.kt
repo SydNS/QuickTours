@@ -35,6 +35,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_nav_home_to_search_for_tour_guide)
             Toast.makeText(requireActivity(),"here ",Toast.LENGTH_LONG).show()
         }
+        _binding !!. walletbtn . setOnClickListener {
+            findNavController().navigate(R.id.action_nav_home_to_nav_slideshow)
+            Toast.makeText(requireActivity(), "here ", Toast.LENGTH_LONG).show()
+        }
 
         return root
     }
