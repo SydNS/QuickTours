@@ -36,7 +36,7 @@
                 android:letterSpacing="-0.01"
                 android:lineSpacingExtra="20sp"
                 android:text="@string/sign_up"
-                android:textColor="#23203f"
+                android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="normal" />
 
@@ -48,7 +48,7 @@
                 android:layout_marginTop="4dp"
                 android:letterSpacing="0.0265"
                 android:text="@string/register_to_create_an_account"
-                android:textColor="#6e6e73"
+                android:textColor="@color/white"
                 android:textSize="17sp" />
 
             <LinearLayout
@@ -248,6 +248,7 @@
 
 
                 <LinearLayout
+                    android:id="@+id/login_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
