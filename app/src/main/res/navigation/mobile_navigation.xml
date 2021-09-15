@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/loginFrag">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/nav_home"
@@ -49,7 +49,7 @@
     <fragment
         android:id="@+id/search_for_tour_guide"
         android:name="com.achtec.tourguide.JetpackNavigation.ui.dashboard.Search_for_tour_guide"
-        android:label="fragment_search_for_tour_guide"
+        android:label="Pick up and Destination"
         tools:layout="@layout/fragment_search_for_tour_guide" >
         <action
             android:id="@+id/action_search_for_tour_guide_to_nav_home"
@@ -176,5 +176,8 @@
         <action
             android:id="@+id/action_splashFragment_to_signupFragment"
             app:destination="@id/signupFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_signupTourguide"
+            app:destination="@id/signupTourguide" />
     </fragment>
 </navigation>
