@@ -95,6 +95,9 @@
         <action
             android:id="@+id/action_recieptFragment_to_nav_home"
             app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_recieptFragment_to_nav_slideshow"
+            app:destination="@id/nav_slideshow" />
     </fragment>
     <fragment
         android:id="@+id/loginFrag"
@@ -107,6 +110,9 @@
         <action
             android:id="@+id/action_loginFrag_to_tourGuidehome"
             app:destination="@id/tourGuidehome" />
+        <action
+            android:id="@+id/action_loginFrag_to_signupTourguide"
+            app:destination="@id/signupTourguide" />
     </fragment>
     <fragment
         android:id="@+id/signupTourguide"
@@ -122,6 +128,9 @@
         <action
             android:id="@+id/action_signupTourguide_to_tourGuidehome2"
             app:destination="@id/tourGuidehome" />
+        <action
+            android:id="@+id/action_signupTourguide_to_loginFrag"
+            app:destination="@id/loginFrag" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
@@ -139,6 +148,9 @@
             app:destination="@id/loginFrag" />
         <action
             android:id="@+id/action_splashFragment_to_signupTourguide"
+            app:destination="@id/signupTourguide" />
+        <action
+            android:id="@+id/action_splashFragment_to_signupTourguide2"
             app:destination="@id/signupTourguide" />
     </fragment>
 </navigation>
