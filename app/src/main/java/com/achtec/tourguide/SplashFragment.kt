@@ -19,9 +19,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.NavHostFragment
-import com.achtec.tourguide.databinding.FragmentSplashBinding
 import android.app.Activity
 import com.achtec.tourguide.JetpackNavigation.MyDrawerController
+import com.achtec.tourguide.databinding.FragmentSplashBinding
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -129,7 +129,7 @@ class SplashFragment : Fragment() {
             true -> NavHostFragment.findNavController(this)
                 .navigate(R.id.action_splashFragment_to_loginFrag)
             false -> NavHostFragment.findNavController(this)
-                .navigate(R.id.action_splashFragment_to_signupFragment)
+                .navigate(R.id.action_splashFragment_to_signupTourguide)
         }
     }
 
