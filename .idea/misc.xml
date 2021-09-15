@@ -51,6 +51,7 @@
         <entry key="app/src/main/res/drawable/overlaybg.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/phonecall.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/view_bg.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/whtbg.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/font/caviar_dreams.xml" value="0.22708333333333333" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_drawer_screen.xml" value="0.196875" />

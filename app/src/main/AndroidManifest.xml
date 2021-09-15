@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -27,10 +28,10 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+
         <activity
             android:name=".JetpackNavigation.DrawerScreenActivity"
             android:exported="true"
-            android:label="@string/title_activity_drawer_screen"
             android:theme="@style/Theme.TourGuide.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,73 +49,7 @@
             android:name=".TourGuideAccount.TourGuideProfile"
             android:exported="true"
             android:theme="@style/NoActionBar" />
-        <activity
-            android:name=".TourDestinations"
-            android:exported="true"
-            android:parentActivityName=".DashBoard">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".DashBoard" />
-        </activity>
-        <activity
-            android:name=".TransportProvider"
-            android:exported="true"
-            android:parentActivityName=".DashBoard">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".DashBoard" />
-        </activity>
-        <activity
-            android:name=".TourGuide"
-            android:exported="true"
-            android:parentActivityName=".DashBoard">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".DashBoard" />
-        </activity>
-        <activity
-            android:name=".WalletActivity"
-            android:exported="true"
-            android:parentActivityName=".DashBoard">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".DashBoard" />
-        </activity>
-        <activity
-            android:name=".DashBoard"
-            android:exported="true"
-            android:theme="@style/NoActionBar" />
-        <activity
-            android:name=".Authentication.SignUpAsTransportProvider"
-            android:exported="true"
-            android:theme="@style/NoActionBar" />
-        <activity
-            android:name=".Authentication.SignUpAsTourGuide"
-            android:exported="true"
-            android:theme="@style/NoActionBar" />
-        <activity
-            android:name=".Authentication.SignUpAsTourist"
-            android:exported="true"
-            android:theme="@style/NoActionBar" />
-        <activity
-            android:name=".Authentication.SignUp"
-            android:exported="true"
-            android:theme="@style/NoActionBar" />
-        <activity
-            android:name=".Authentication.LoginActivity"
-            android:exported="true"
-            android:theme="@style/NoActionBar" />
-        <activity
-            android:name=".MainActivity"
-            android:allowEmbedded="true"
-            android:exported="true"
-            android:theme="@style/NoActionBar">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
     </application>
 
 </manifest>

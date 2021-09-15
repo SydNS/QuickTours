@@ -49,11 +49,6 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="NoActionBar2" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="windowActionBar">true</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
     <style name="Theme.FilledButtons" parent="Theme.MaterialComponents">
         <item name="backgroundTint">@color/white</item>
         <item name="cornerRadius">15dp</item>
@@ -62,16 +57,6 @@
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/blue</item>
         <item name="android:fontFamily">serif</item>
-    </style>
-
-    <style name="Theme.MyOutlinedButtons" parent="Widget.MaterialComponents.Button.OutlinedButton">
-        <item name="cornerRadius">20dp</item>
-        <item name="cornerSize">8dp</item>
-        <item name="android:fontFamily">serif</item>
-        <item name="textAllCaps">false</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="strokeColor">@color/white</item>
     </style>
 
     <style name="MyEditableFields" parent="Widget.MaterialComponents.TextView">
