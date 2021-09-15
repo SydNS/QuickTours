@@ -42,6 +42,7 @@
         <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/sign_up_activity.xml" value="0.2" />
         <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/layout/top_up_pop_up.xml" value="0.33" />
         <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/menu/main_menu.xml" value="0.22" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/activitybacground.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/bgtint.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/choose.xml" value="0.21302083333333333" />
@@ -84,6 +85,8 @@
         <entry key="app/src/main/res/menu/activity_drawer_screen_drawer.xml" value="0.25" />
         <entry key="app/src/main/res/menu/drawer_screen.xml" value="0.196875" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.5" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.10729166666666666" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.10729166666666666" />
       </map>
     </option>
   </component>

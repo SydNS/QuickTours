@@ -38,7 +38,7 @@ class MapsFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         fragmentMapsBinding= FragmentMapsBinding.inflate(inflater, container, false)
 
         fragmentMapsBinding.orderButton.setOnClickListener {
@@ -54,4 +54,7 @@ class MapsFragment : Fragment() {
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
     }
+
+
+
 }

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/signupTourguide">
 
     <fragment
         android:id="@+id/nav_home"
@@ -107,6 +107,9 @@
         <action
             android:id="@+id/action_loginFrag_to_signupTourist"
             app:destination="@id/signupTourist" />
+        <action
+            android:id="@+id/action_loginFrag_to_tourGuidehome"
+            app:destination="@id/tourGuidehome" />
     </fragment>
     <fragment
         android:id="@+id/signupFragment"
@@ -142,6 +145,15 @@
         tools:layout="@layout/fragment_signup_tourguide" >
         <action
             android:id="@+id/action_signupTourguide_to_tourGuidehome"
+            app:destination="@id/tourGuidehome" />
+        <action
+            android:id="@+id/action_signupTourguide_to_signupTourist"
+            app:destination="@id/signupTourist" />
+        <action
+            android:id="@+id/action_signupTourguide_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_signupTourguide_to_tourGuidehome2"
             app:destination="@id/tourGuidehome" />
     </fragment>
     <fragment
