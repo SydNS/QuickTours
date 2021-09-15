@@ -1,12 +1,7 @@
 <resources>
     <string name="app_name">QwicTour</string>
-    <string name="choose_sign_up_option">Choose Sign Up option…</string>
     <string name="sign_up_as_tourist">Sign up as Tourist</string>
     <string name="already_have_an_account">Already have an account?</string>
-    <string name="log_in_here">Log in here</string>
-    <string name="don_t_have_an_account_yet">Don\'t have an account yet?</string>
-    <string name="create_account">Create Account</string>
-    <string name="forgot_password">Forgot Password?</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
     <string name="log_in">Log in</string>
@@ -17,14 +12,10 @@
     <string name="nin_passport">NIN/Passport</string>
     <string name="nationality">Nationality</string>
     <string name="find_the_best_tour_guide_in_town">Find the best Tour Guide in town</string>
-    <string name="signing_up_as_tour_guide">Signing up as Tour Guide</string>
-    <string name="enter_tour_guide_name">Enter Tour Guide Name</string>
     <string name="find_tour_guides">Find Tour Guides</string>
     <string name="find_transporters">Find Transporters</string>
     <string name="e_wallet">E-Wallet</string>
     <string name="search">Search</string>
-    <string name="open_drawer">Open Navigation Drawer</string>
-    <string name="close_drawer">Close Navigation Drawer</string>
     <string name="available_tours">Available Tours</string>
     <string name="to">To:</string>
     <string name="from">From:</string>
@@ -41,8 +32,6 @@
     <string name="transfer">Transfer</string>
     <string name="more">More</string>
     <string name="history">HISTORY</string>
-    <string name="top_up_with_airtel_money">Top up with Airtel Money</string>
-    <string name="top_up_with_mtn_momo">Top up with MTN MoMo</string>
     <string name="profile">Profile</string>
     <string name="log_out">Log Out</string>
     <string name="communicate">Communicate</string>
@@ -56,13 +45,6 @@
     <string name="pending_alerts">Pending Alerts</string>
     <string name="wallet_transactions_history">Wallet Transactions History</string>
     <string name="tour_history">Tour History</string>
-    <string-array name="sign_up_options">
-        <item>Choose here</item>
-        <item>Sign up as Tourist</item>
-        <item>Sign up as Tour Guide</item>
-        <item>Sign up as Transporter</item>
-    </string-array>
-    <string name="title_activity_drawer_screen">DrawerScreenActivity</string>
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
