@@ -20,14 +20,17 @@ import com.google.firebase.ktx.Firebase
 import android.content.DialogInterface
 import android.graphics.Color
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import com.achtec.tourguide.R
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import kotlinx.android.synthetic.main.fragment_login.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -46,6 +49,7 @@ class LoginFrag : Fragment() {
     lateinit var loginbanner: TextView
     lateinit var login_emailaddress: TextInputLayout
     lateinit var login_password: TextInputLayout
+    lateinit var signup_text: LinearLayout
 
     lateinit var uemail: String
     lateinit var upassd: String
@@ -91,8 +95,18 @@ class LoginFrag : Fragment() {
         loginbanner = v.findViewById(R.id.loginbanner)
         login_emailaddress = v.findViewById(R.id.login_emailaddress)
         login_password = v.findViewById(R.id.login_password)
+        signup_text = v.findViewById(R.id.signup_text)
 
-        login(loginbtn, login_emailaddress, login_password, loginbanner)
+        signup_text.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFrag_to_signupTourguide)
+
+        }
+
+//        login(loginbtn, login_emailaddress, login_password, loginbanner)
+
+        loginbtn.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFrag_to_nav_home)
+        }
 
 
         return v
@@ -153,11 +167,11 @@ class LoginFrag : Fragment() {
                 if (WhatTypeOfUser() == "Tourist") {
                     NavHostFragment
                         .findNavController(this)
-                        .navigate(R.id.action_loginFrag_to_tourGuidehome)
+                        .navigate(R.id.action_loginFrag_to_nav_home)
 
                 } else {
                     NavHostFragment.findNavController(this)
-                        .navigate(R.id.action_loginFrag_to_nav_home)
+                        .navigate(R.id.action_loginFrag_to_tourGuidehome)
                 }
                 Toast.makeText(requireActivity(), "${auth.currentUser?.email}", Toast.LENGTH_LONG)
                     .show()
