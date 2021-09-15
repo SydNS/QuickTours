@@ -94,7 +94,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="john">jon doe</string>
-    <string name="tourguide">tour guide</string>
+    <string name="tourguide">Tour guide</string>
     <string name="sending_messages">text</string>
     <string name="taken">ocuppied</string>
     <string name="tourguideprofile">tourguide</string>
@@ -106,4 +106,29 @@
     <string name="reciept">RECIEPT</string>
     <string name="end_trip">END TRIP</string>
     <string name="start_trip">START TRIP</string>
+    <string name="sign_up">Signup</string>
+    <string name="login">Login</string>
+    <string name="register_to_create_an_account">Register to create an account</string>
+    <string name="username">Username</string>
+    <string name="email_address">Email Addresz</string>
+    <string name="phone_number">Phone number</string>
+    <string name="roles_deliverer">Tourist</string>
+    <string name="roles_client">Tour Guide</string>
+    <string name="confirmpassword">Confirm Password</string>
+    <string name="kindlyenterpassword">Kindly Enter Password</string>
+    <string name="eightcharacterlong">8 Character Long</string>
+    <string name="kindlyconfirm">Kindly Confirm Password</string>
+    <string name="matchingpasswordsneeded">Passwords must match</string>
+    <string name="radiobtnusertype">Specify Role</string>
+    <string name="thanks">"Thanks "</string>
+    <string name="users">Users</string>
+    <string name="clients">tourists</string>
+    <string name="enteruserameneeded">Username needed</string>
+    <string name="enteremailaddress">Enter emailaddress</string>
+    <string name="enterphonenumber">Enter Phone Number</string>
+    <string name="enter10digitnumbers">Enter 10 digits</string>
+    <string name="sign_in">Login</string>
+    <string name="login_to_continue_your_account">Enjoy guided tours around uganda with us</string>
+    <string name="dont_have_an_account">Not registered yet?</string>
+    <string name="register">Go ahead !</string>
 </resources>
