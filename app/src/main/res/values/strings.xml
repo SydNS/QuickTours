@@ -2,10 +2,6 @@
     <string name="app_name">QwicTour</string>
     <string name="choose_sign_up_option">Choose Sign Up option…</string>
     <string name="sign_up_as_tourist">Sign up as Tourist</string>
-    <string name="sign_up_as_tour_guide">Sign Up as Tour Guide</string>
-    <string name="sign_up_as_transport_provider">Sign Up as Transport Provider</string>
-    <string name="sign_up_as_hotel">Sign up as Hotel</string>
-    <string name="sign_up_as_restaurant">Sign up as Restaurant</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="log_in_here">Log in here</string>
     <string name="don_t_have_an_account_yet">Don\'t have an account yet?</string>
@@ -14,30 +10,17 @@
     <string name="password">Password</string>
     <string name="email">Email</string>
     <string name="log_in">Log in</string>
-    <string name="signing_up_as_restaurant">Signing up as Restaurant…</string>
-    <string name="enter_restaurant_image_here">Enter Restaurant image here:</string>
-    <string name="used_to_upload_restaurant_image">Used to upload restaurant image</string>
-    <string name="enter_restaurant_name">Enter Restaurant Name</string>
     <string name="phone">Phone</string>
-    <string name="enter_email">Enter Email</string>
-    <string name="enter_location">Enter Location</string>
     <string name="submit_details">Submit Details</string>
-    <string name="signing_up_as_hotel">Signing up as Hotel</string>
-    <string name="enter_hotel_image_here">Enter Hotel Picture Here</string>
-    <string name="enter_hotel_name">Enter Hotel Name</string>
     <string name="enter_full_name">Enter Full Name</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="nin_passport">NIN/Passport</string>
     <string name="nationality">Nationality</string>
     <string name="find_the_best_tour_guide_in_town">Find the best Tour Guide in town</string>
-    <string name="signing_up_as_transport_provider">Siging up as Transport Provider</string>
     <string name="signing_up_as_tour_guide">Signing up as Tour Guide</string>
     <string name="enter_tour_guide_name">Enter Tour Guide Name</string>
-    <string name="find_tours">Find Tours</string>
     <string name="find_tour_guides">Find Tour Guides</string>
     <string name="find_transporters">Find Transporters</string>
-    <string name="find_restaurants">Find Restaurants</string>
-    <string name="find_hotels">Find Hotels</string>
     <string name="e_wallet">E-Wallet</string>
     <string name="search">Search</string>
     <string name="open_drawer">Open Navigation Drawer</string>
@@ -46,7 +29,6 @@
     <string name="to">To:</string>
     <string name="from">From:</string>
     <string name="view_all">View All</string>
-    <string name="from_wallet_back_to_dashboard">From wallet back to dashboard</string>
     <string name="wallet">Wallet</string>
     <string name="_5867">**** 5867</string>
     <string name="_12_12_2021">12/12/2021</string>
@@ -81,21 +63,12 @@
         <item>Sign up as Transporter</item>
     </string-array>
     <string name="title_activity_drawer_screen">DrawerScreenActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="john">jon doe</string>
     <string name="tourguide">Tour guide</string>
-    <string name="sending_messages">text</string>
     <string name="taken">ocuppied</string>
     <string name="tourguideprofile">tourguide</string>
     <string name="_0771234567">0780134747</string>
