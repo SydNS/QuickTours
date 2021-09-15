@@ -11,6 +11,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.NavHost
 import androidx.navigation.Navigation
@@ -142,61 +144,62 @@ class SignupTourguide : Fragment() {
 //         flow structure controlled here
 
             //checking if the value from the email field is empty or  not
-            when {
-                uname.isEmpty() -> {
-                    username.isErrorEnabled = true
-                    username.error = getString(R.string.enteruserameneeded)
-                }
-
-                uemail.isEmpty() -> {
-                    useremailaddress.isErrorEnabled = true
-                    useremailaddress.error = getString(R.string.enteremailaddress)
-                }
-                phone.isEmpty() -> {
-                    userphone.isErrorEnabled = true
-                    userphone.error = getString(R.string.enterphonenumber)
-                }
-                phone.isNotEmpty() && phone.length != 10 -> {
-
-                    userphone.isErrorEnabled = true
-                    userphone.error = getString(R.string.enter10digitnumbers)
-                }
-
-                password.isEmpty() -> {
-                    signupbanner.text =
-                        getString(R.string.confirmpassword)
-                    userpassword.isErrorEnabled = true
-                    userpassword.error = getString(R.string.kindlyenterpassword)
-                }
-                password.isNotEmpty() && password.length < 8 -> {
-                    signupbanner.text = getString(R.string.eightcharacterlong)
-                    userpassword.isErrorEnabled = true
-                    userpassword.error = getString(R.string.eightcharacterlong)
-                }
-                password2.isEmpty() -> {
-                    signupbanner.text = getString(R.string.confirmpassword)
-                    userpassword2.isErrorEnabled = true
-                    userpassword2.error = getString(R.string.kindlyconfirm)
-                }
+//            when {
+//                uname.isEmpty() -> {
+//                    username.isErrorEnabled = true
+//                    username.error = getString(R.string.enteruserameneeded)
+//                }
 //
-                password != password2 -> {
-                    signupbanner.text = getString(R.string.matchingpasswordsneeded)
-                    userpassword2.isErrorEnabled = true
-                    userpassword2.error = getString(R.string.matchingpasswordsneeded)
-                }
-                userdecision.isEmpty() -> {
-                    userradiobtn.error = getString(R.string.radiobtnusertype)
-                    delivererradiobtn.error = getString(R.string.radiobtnusertype)
-                }
+//                uemail.isEmpty() -> {
+//                    useremailaddress.isErrorEnabled = true
+//                    useremailaddress.error = getString(R.string.enteremailaddress)
+//                }
+//                phone.isEmpty() -> {
+//                    userphone.isErrorEnabled = true
+//                    userphone.error = getString(R.string.enterphonenumber)
+//                }
+//                phone.isNotEmpty() && phone.length != 10 -> {
+//
+//                    userphone.isErrorEnabled = true
+//                    userphone.error = getString(R.string.enter10digitnumbers)
+//                }
+//
+//                password.isEmpty() -> {
+//                    signupbanner.text =
+//                        getString(R.string.confirmpassword)
+//                    userpassword.isErrorEnabled = true
+//                    userpassword.error = getString(R.string.kindlyenterpassword)
+//                }
+//                password.isNotEmpty() && password.length < 8 -> {
+//                    signupbanner.text = getString(R.string.eightcharacterlong)
+//                    userpassword.isErrorEnabled = true
+//                    userpassword.error = getString(R.string.eightcharacterlong)
+//                }
+//                password2.isEmpty() -> {
+//                    signupbanner.text = getString(R.string.confirmpassword)
+//                    userpassword2.isErrorEnabled = true
+//                    userpassword2.error = getString(R.string.kindlyconfirm)
+//                }
+////
+//                password != password2 -> {
+//                    signupbanner.text = getString(R.string.matchingpasswordsneeded)
+//                    userpassword2.isErrorEnabled = true
+//                    userpassword2.error = getString(R.string.matchingpasswordsneeded)
+//                }
+//                userdecision.isEmpty() -> {
+//                    userradiobtn.error = getString(R.string.radiobtnusertype)
+//                    delivererradiobtn.error = getString(R.string.radiobtnusertype)
+//                }
+//
+//                else -> {
+//                    signupbanner.text = getString(R.string.thanks)
+////            method creating the user with the email & password provided
+//                    createAccount(uemail, password, v, userdecision)
+//
+//                }
+//            }
 
-                else -> {
-                    signupbanner.text = getString(R.string.thanks)
-//            method creating the user with the email & password provided
-                    createAccount(uemail, password, v, userdecision)
-
-                }
-            }
-
+            findNavController().navigate(R.id.action_signupTourguide_to_nav_home)
         }
 
         return v
@@ -282,6 +285,18 @@ class SignupTourguide : Fragment() {
         editor.putString("Type", usertype)
         editor.apply()
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val supportActionBar: ActionBar? = (requireActivity() as AppCompatActivity).supportActionBar
+        supportActionBar?.hide()
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+        (requireActivity() as AppCompatActivity).supportActionBar?.show()
     }
 
 
