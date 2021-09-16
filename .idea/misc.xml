@@ -95,6 +95,9 @@
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.10729166666666666" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.10729166666666666" />
         <entry key="tourguide/src/main/res/layout/activity_main.xml" value="0.18125" />
+        <entry key="tourguide/src/main/res/layout/fragment_gallery.xml" value="0.196875" />
+        <entry key="tourguide/src/main/res/layout/fragment_login.xml" value="0.196875" />
+        <entry key="tourguide/src/main/res/layout/fragment_maps2.xml" value="0.196875" />
       </map>
     </option>
   </component>
