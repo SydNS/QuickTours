@@ -82,7 +82,7 @@ class LoginFrag : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
 
         auth = FirebaseAuth.getInstance()
