@@ -1,7 +1,10 @@
 package com.achtec.tourguide.JetpackNavigation
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.Menu
+import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -11,11 +14,14 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.navigation.Navigation
 import com.achtec.tourguide.R
 import com.achtec.tourguide.databinding.ActivityDrawerScreenBinding
 
 
-class DrawerScreenActivity : AppCompatActivity(), MyDrawerController{
+class DrawerScreenActivity : AppCompatActivity(), MyDrawerController {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityDrawerScreenBinding
@@ -30,9 +36,10 @@ class DrawerScreenActivity : AppCompatActivity(), MyDrawerController{
 
         setSupportActionBar(binding.appBarDrawerScreen.toolbar)
 
-
         drawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
+
+
         val navController = findNavController(R.id.nav_host_fragment_content_drawer_screen)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -43,6 +50,31 @@ class DrawerScreenActivity : AppCompatActivity(), MyDrawerController{
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) !==
+            PackageManager.PERMISSION_GRANTED
+        ) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(
+                    this,
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                )
+            ) {
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 1
+                )
+            } else {
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 1
+                )
+            }
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -66,5 +98,36 @@ class DrawerScreenActivity : AppCompatActivity(), MyDrawerController{
 
         supportActionBar?.show();
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+    }
+
+
+    //    permissions
+    override fun onRequestPermissionsResult(
+        requestCode: Int, permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when (requestCode) {
+            1 -> {
+                if (grantResults.isNotEmpty() && grantResults[0] ==
+                    PackageManager.PERMISSION_GRANTED
+                ) {
+                    if ((ContextCompat.checkSelfPermission(
+                            this,
+                            Manifest.permission.ACCESS_FINE_LOCATION
+                        ) ===
+                                PackageManager.PERMISSION_GRANTED)
+                    ) {
+                        Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show()
+                    onStop()
+                }
+                return
+            }
+        }
+
+
     }
 }
