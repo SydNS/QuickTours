@@ -41,6 +41,7 @@
                 android:layout_weight="1"
                 android:gravity="end"
                 android:text="@string/_12_12_2021"
+                android:maxLength="11"
                 android:textColor="@color/white" />
         </LinearLayout>
 

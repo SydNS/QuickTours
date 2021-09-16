@@ -44,8 +44,11 @@
         <entry key="..\:/Users/Mask_001/AndroidStudioProjects/TourGuide/app/src/main/res/menu/main_menu.xml" value="0.22" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/activitybacground.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/arrow_back_ios_24.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/bgtint.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/choose.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/curved_white_top.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/curvedtop.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/ic_baseline_message_24.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/order_profile_pic_circle_border.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/overlaybg.xml" value="0.21302083333333333" />
@@ -67,6 +70,7 @@
         <entry key="app/src/main/res/layout/activity_tour_guide_profile.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_wallet.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/app_bar_drawer_screen.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/bottomsheet_layout.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/content_drawer_screen.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.196875" />
@@ -81,9 +85,10 @@
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_start_tour.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/fragment_tour_guidehome.xml" value="0.196875" />
-        <entry key="app/src/main/res/layout/fragment_wallet.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/fragment_wallet.xml" value="0.391304347826087" />
         <entry key="app/src/main/res/layout/header.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/tourguideitemview.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/transfer.xml" value="0.196875" />
         <entry key="app/src/main/res/menu/activity_drawer_screen_drawer.xml" value="0.25" />
         <entry key="app/src/main/res/menu/drawer_screen.xml" value="0.196875" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.5" />
