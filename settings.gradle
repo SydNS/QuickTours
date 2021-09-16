@@ -7,4 +7,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Tour Guide"
-include ':app'
+include ':tourist'
+include ':tourguide'
