@@ -22,6 +22,8 @@ import androidx.navigation.fragment.NavHostFragment
 import android.app.Activity
 import com.achtec.tourguide.JetpackNavigation.MyDrawerController
 import com.achtec.tourguide.databinding.FragmentSplashBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -40,6 +42,10 @@ class SplashFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+
+    private var mAuth: FirebaseAuth? = null
+    private var currentUser: FirebaseUser? = null
+
     private lateinit var binding: FragmentSplashBinding
 
 
@@ -49,6 +55,20 @@ class SplashFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        mAuth = FirebaseAuth.getInstance()
+        mAuth?.currentUser
+    }
+
+    override fun onStart() {
+        super.onStart()
+//         Check if user is signed in (non-null) and update UI accordingly.
+        currentUser = mAuth?.currentUser
+//        Toast.makeText(requireActivity(),"${currentUser?.email}",Toast.LENGTH_LONG).show()
+//        if (currentUser == null) {
+//            NavHostFragment.findNavController(requireParentFragment())
+//                .navigate(R.id.action_splashFragment_to_loginFrag)
+//        }
     }
 
     override fun onCreateView(
@@ -126,8 +146,12 @@ class SplashFragment : Fragment() {
 
     private fun checkUserSignupStatus() {
         when (getSignupStatus()) {
-            true -> NavHostFragment.findNavController(this)
-                .navigate(R.id.action_splashFragment_to_loginFrag)
+            true -> {
+                if (currentUser == null) {
+                    NavHostFragment.findNavController(requireParentFragment())
+                        .navigate(R.id.action_splashFragment_to_loginFrag)
+                }
+            }
             false -> NavHostFragment.findNavController(this)
                 .navigate(R.id.action_splashFragment_to_signupTourguide)
         }
