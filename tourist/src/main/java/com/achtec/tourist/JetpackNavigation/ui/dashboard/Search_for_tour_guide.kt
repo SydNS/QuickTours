@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +16,16 @@ import com.achtec.tourist.JetpackNavigation.TourguideModel
 import com.achtec.tourist.JetpackNavigation.adapters.TourguidesAdapter
 import com.achtec.tourist.R
 import com.achtec.tourist.databinding.FragmentSearchForTourGuideBinding
+import com.google.android.gms.common.api.Status
+import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment
+import com.google.android.libraries.places.api.Places
+import com.google.android.libraries.places.api.model.Place
+import com.google.android.libraries.places.widget.AutocompleteSupportFragment
+import com.google.android.libraries.places.widget.listener.PlaceSelectionListener
+
+
+
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,12 +37,11 @@ private const val ARG_PARAM2 = "param2"
  * Use the [Search_for_tour_guide.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Search_for_tour_guide : Fragment() ,TourguidesAdapter.OnItemClickListener{
+class Search_for_tour_guide : Fragment(), TourguidesAdapter.OnItemClickListener {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     private var ordersList: ArrayList<TourguideModel>? = null
-
 
 
     // This property is only valid between onCreateView and
@@ -57,41 +67,140 @@ class Search_for_tour_guide : Fragment() ,TourguidesAdapter.OnItemClickListener{
         // Inflate the layout for this fragment
 
         ordersList = ArrayList()
-        ordersList!!.add(TourguideModel(R.drawable.tg2, "Roy", "UBK 167A", "Ntinda", "0780134747","NO. 1233"))
-        ordersList!!.add(TourguideModel(R.drawable.tg1, "Prince", "UBK 183A", "Ntinda", "0780134747","NO. 1233"))
-        ordersList!!.add(TourguideModel(R.drawable.tg2, "Dean", "UBK 113A", "Ntinda", "0780134747","NO. 1233"))
-        ordersList!!.add(TourguideModel(R.drawable.tg1, "Roy", "UBK 167A", "Ntinda", "0780134747","NO. 1233"))
-        ordersList!!.add(TourguideModel(R.drawable.tg2, "Prince", "UBK 183A", "Ntinda", "0780134747","NO. 1233"))
-        ordersList!!.add(TourguideModel(R.drawable.tg1, "Dean", "UBK 113A", "Ntinda", "0780134747","NO. 1233"))
-ordersList!!.add(TourguideModel(R.drawable.tg2, "Roy", "UBK 167A", "Ntinda", "0780134747","NO. 1233"))
-        ordersList!!.add(TourguideModel(R.drawable.tg1, "Prince", "UBK 183A", "Ntinda", "0780134747","NO. 1233"))
-        ordersList!!.add(TourguideModel(R.drawable.tg2, "Dean", "UBK 113A", "Ntinda", "0780134747","NO. 1233"))
-        ordersList!!.add(TourguideModel(R.drawable.tg1, "Roy", "UBK 167A", "Ntinda", "0780134747","NO. 1233"))
-        ordersList!!.add(TourguideModel(R.drawable.tg2, "Prince", "UBK 183A", "Ntinda", "0780134747","NO. 1233"))
-        ordersList!!.add(TourguideModel(R.drawable.tg1, "Dean", "UBK 113A", "Ntinda", "0780134747","NO. 1233"))
+        ordersList!!.add(
+            TourguideModel(
+                R.drawable.tg2,
+                "Roy",
+                "UBK 167A",
+                "Ntinda",
+                "0780134747",
+                "NO. 1233"
+            )
+        )
+        ordersList!!.add(
+            TourguideModel(
+                R.drawable.tg1,
+                "Prince",
+                "UBK 183A",
+                "Ntinda",
+                "0780134747",
+                "NO. 1233"
+            )
+        )
+        ordersList!!.add(
+            TourguideModel(
+                R.drawable.tg2,
+                "Dean",
+                "UBK 113A",
+                "Ntinda",
+                "0780134747",
+                "NO. 1233"
+            )
+        )
+        ordersList!!.add(
+            TourguideModel(
+                R.drawable.tg1,
+                "Roy",
+                "UBK 167A",
+                "Ntinda",
+                "0780134747",
+                "NO. 1233"
+            )
+        )
+        ordersList!!.add(
+            TourguideModel(
+                R.drawable.tg2,
+                "Prince",
+                "UBK 183A",
+                "Ntinda",
+                "0780134747",
+                "NO. 1233"
+            )
+        )
+        ordersList!!.add(
+            TourguideModel(
+                R.drawable.tg1,
+                "Dean",
+                "UBK 113A",
+                "Ntinda",
+                "0780134747",
+                "NO. 1233"
+            )
+        )
+        ordersList!!.add(
+            TourguideModel(
+                R.drawable.tg2,
+                "Roy",
+                "UBK 167A",
+                "Ntinda",
+                "0780134747",
+                "NO. 1233"
+            )
+        )
+        ordersList!!.add(
+            TourguideModel(
+                R.drawable.tg1,
+                "Prince",
+                "UBK 183A",
+                "Ntinda",
+                "0780134747",
+                "NO. 1233"
+            )
+        )
+        ordersList!!.add(
+            TourguideModel(
+                R.drawable.tg2,
+                "Dean",
+                "UBK 113A",
+                "Ntinda",
+                "0780134747",
+                "NO. 1233"
+            )
+        )
+        ordersList!!.add(
+            TourguideModel(
+                R.drawable.tg1,
+                "Roy",
+                "UBK 167A",
+                "Ntinda",
+                "0780134747",
+                "NO. 1233"
+            )
+        )
+        ordersList!!.add(
+            TourguideModel(
+                R.drawable.tg2,
+                "Prince",
+                "UBK 183A",
+                "Ntinda",
+                "0780134747",
+                "NO. 1233"
+            )
+        )
+        ordersList!!.add(
+            TourguideModel(
+                R.drawable.tg1,
+                "Dean",
+                "UBK 113A",
+                "Ntinda",
+                "0780134747",
+                "NO. 1233"
+            )
+        )
 
 
         _binding!!.tgSearchBtn.setOnClickListener {
-            Toast.makeText(requireActivity(),"searc guides",Toast.LENGTH_SHORT).show()
-            val progressBar = ProgressDialog(requireActivity());
-            Handler(Looper.getMainLooper()).postDelayed({
-                progressBar.setCancelable(true);
-                progressBar.setMessage("Getting Tour Guides Near You")
-                progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-                progressBar.setProgress(0)
-                progressBar.setMax(100)
-                progressBar.show()
-            }, 3000)
+            Toast.makeText(requireActivity(), "searc guides", Toast.LENGTH_SHORT).show()
 
-            _binding!!.rcvTourguides.adapter=TourguidesAdapter(ordersList!!, this)
-            _binding!!.rcvTourguides.layoutManager=LinearLayoutManager(requireActivity())
+            _binding!!.rcvTourguides.adapter = TourguidesAdapter(ordersList!!, this)
+            _binding!!.rcvTourguides.layoutManager = LinearLayoutManager(requireActivity())
 
         }
+
+
         return root
     }
-
-
-
+    lateinit var progressBar:ProgressDialog
 
     companion object {
         /**
@@ -130,9 +239,25 @@ ordersList!!.add(TourguideModel(R.drawable.tg2, "Roy", "UBK 167A", "Ntinda", "07
     }
 
     override fun onSelectingRider(position: Int) {
-        Toast.makeText(requireActivity(), "you have chosen  ${ordersList?.get(position)?.name} guide", Toast.LENGTH_SHORT).show()
-        findNavController().navigate(
-            R.id.action_search_for_tour_guide_to_mapsFragment
-        )
+        Toast.makeText(
+            requireActivity(),
+            "you have chosen  ${ordersList?.get(position)?.name} guide",
+            Toast.LENGTH_SHORT
+        ).show()
+        progressBar= ProgressDialog(requireActivity());
+        progressBar.setCancelable(true);
+        progressBar.setMessage("Getting Tour Guides Near You")
+        progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressBar.setProgress(0)
+        progressBar.setMax(100)
+        progressBar.show()
+        Handler(Looper.getMainLooper()).postDelayed({
+             findNavController().navigate(
+                R.id.action_search_for_tour_guide_to_mapsFragment
+            )
+        }, 3000)
+        progressBar.dismiss()
+
+
     }
 }
