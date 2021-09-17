@@ -68,7 +68,7 @@
     <string name="email_address">Email Addresz</string>
     <string name="phone_number">Phone number</string>
     <string name="roles_deliverer">Tourist</string>
-    <string name="roles_client">Tour Guide</string>
+    <string name="roles_client">TourGuide</string>
     <string name="confirmpassword">Confirm Password</string>
     <string name="kindlyenterpassword">Kindly Enter Password</string>
     <string name="eightcharacterlong">8 Character Long</string>
