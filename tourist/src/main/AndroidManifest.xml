@@ -16,7 +16,8 @@
         android:theme="@style/Theme.TourGuide">
         <activity
             android:name=".JetpackNavigation.TouristMap"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.TourGuide.NoActionBar"/>
         <!-- <meta-data -->
         <!-- android:name="com.google.android.geo.API_KEY" -->
         <!-- android:value="AIzaSyDhwReQXLN7tY9ezrTmwoIU4u18hePSP3g"/> -->
