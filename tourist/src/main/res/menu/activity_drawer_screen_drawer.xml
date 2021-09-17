@@ -8,14 +8,6 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/home_24"
             android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/person_24"
-            android:title="@string/profile" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/account_balance_wallet_24"
-            android:title="@string/wallet" />
     </group>
     <group android:checkableBehavior="single">
         <item
@@ -28,9 +20,13 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_profile"
+                    android:id="@+id/nav_gallery"
                     android:icon="@drawable/person_24"
                     android:title="@string/profile" />
+                <item
+                    android:id="@+id/nav_slideshow"
+                    android:icon="@drawable/account_balance_wallet_24"
+                    android:title="@string/wallet" />
                 <item
                     android:id="@+id/loginFrag"
                     android:icon="@drawable/logout"
