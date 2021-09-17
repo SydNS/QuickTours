@@ -66,6 +66,7 @@ class Search_for_tour_guide : Fragment(), TourguidesAdapter.OnItemClickListener 
         val root: View = _binding!!.root
         // Inflate the layout for this fragment
 
+        progressBar= ProgressDialog(requireActivity());
         ordersList = ArrayList()
         ordersList!!.add(
             TourguideModel(
@@ -244,7 +245,7 @@ class Search_for_tour_guide : Fragment(), TourguidesAdapter.OnItemClickListener 
             "you have chosen  ${ordersList?.get(position)?.name} guide",
             Toast.LENGTH_SHORT
         ).show()
-        progressBar= ProgressDialog(requireActivity());
+
         progressBar.setCancelable(true);
         progressBar.setMessage("Getting Tour Guides Near You")
         progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
