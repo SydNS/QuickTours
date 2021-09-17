@@ -18,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.NavHostFragment
 import android.app.Activity
+import android.content.SharedPreferences
+import androidx.navigation.fragment.findNavController
 import com.achtec.tourist.JetpackNavigation.MyDrawerController
 import com.achtec.tourist.databinding.FragmentSplashBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -68,6 +70,7 @@ class SplashFragment : Fragment() {
 //                .navigate(R.id.action_splashFragment_to_loginFrag)
 //        }
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -143,23 +146,35 @@ class SplashFragment : Fragment() {
 
 
     private fun checkUserSignupStatus() {
-        when (getSignupStatus()) {
+        when (IsUserOld()) {
             true -> {
                 if (currentUser == null) {
-                    NavHostFragment.findNavController(requireParentFragment())
-                        .navigate(R.id.action_splashFragment_to_loginFrag)
+                    findNavController().navigate(R.id.action_splashFragment_to_loginFrag)
+                }else{
+                    if (getSignupStatusType()=="Tourist"){
+                        findNavController().navigate(R.id.action_splashFragment_to_nav_home)
+                    }else if (getSignupStatusType()=="TourGuide"){
+                        findNavController().navigate(R.id.action_splashFragment_to_tourGuidehome)
+                    }
                 }
             }
             false -> NavHostFragment.findNavController(this)
-                .navigate(R.id.action_splashFragment_to_signupTourguide)
+                .navigate(R.id.action_splashFragment_to_signupTourguide2)
         }
     }
 
-    private fun getSignupStatus(): Boolean {
-        val sharedPreferences =
-            activity?.getSharedPreferences("Signed_Up", Context.MODE_PRIVATE)
+    private fun IsUserOld(): Boolean {
+        val shared =
+            requireActivity().getSharedPreferences("Old_User_signedup", Context.MODE_PRIVATE)
+        return shared.getBoolean("User_old_or_signed_up", false)
 
-        return sharedPreferences!!.getBoolean("Signed_Up", false)
+    }
+
+    private fun getSignupStatusType(): String?{
+        val sharedPreferences =
+            activity?.getSharedPreferences("OldUserType", Context.MODE_PRIVATE)
+
+        return sharedPreferences!!.getString("Type","Tourist")
     }
 
 
