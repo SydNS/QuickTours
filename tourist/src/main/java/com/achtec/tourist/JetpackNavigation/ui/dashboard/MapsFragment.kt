@@ -92,8 +92,8 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
          * install it inside the SupportMapFragment. This method will only be triggered once the
          * user has installed Google Play services and returned to the app.
          */
-        val sydney = LatLng(-34.0, 151.0)
-        googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
+        val sydney = LatLng(.3399, 32.6271)
+        googleMap.addMarker(MarkerOptions().position(sydney).title("Here  i am"))
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
 
@@ -250,13 +250,13 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
                                 val map: HashMap<String?, Any?> = HashMap<String?, Any?>()
                                 map["customerRideId"] = customerId
                                 map["destination"] = destination
-                                map["destinationLat"] = -1.2864
-                                map["destinationLng"] = 36.8264
+                                map["destinationLat"] =  0.3399
+                                map["destinationLng"] = 32.6271
                                 driverRef.updateChildren(map)
                                 getDriverLocation()
                                 getDriverInfo()
                                 getHasRideEnded()
-                                mRequest!!.text = "Looking for Driver's Location...."
+                                mRequest!!.text = "Looking for Guide's Location...."
                             }
                         }
 
@@ -318,7 +318,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
                         }
                         mDriverMarker = mMap!!.addMarker(
                             MarkerOptions().position(driverLatLng).title("Your Guide")
-                                .icon(BitmapDescriptorFactory.fromResource(R.drawable.tour_guide))
+                                .icon(BitmapDescriptorFactory.fromResource(R.drawable.tour_guide__1_))
                         )
                     }
                 }

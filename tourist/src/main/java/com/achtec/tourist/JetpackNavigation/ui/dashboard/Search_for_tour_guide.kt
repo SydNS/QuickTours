@@ -242,7 +242,7 @@ class Search_for_tour_guide : Fragment(), TourguidesAdapter.OnItemClickListener 
     override fun onSelectingRider(position: Int) {
 
         progressBar.setCancelable(true);
-        progressBar.setMessage("Getting Tour Guides Near You")
+        progressBar.setMessage("Getting your Location and  Tour Guides Near You")
         progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressBar.setProgress(0)
         progressBar.setMax(100)
@@ -254,11 +254,16 @@ class Search_for_tour_guide : Fragment(), TourguidesAdapter.OnItemClickListener 
         Handler(Looper.getMainLooper()).postDelayed({
 
             progressBar.show()
-            findNavController().navigate(
-                R.id.action_search_for_tour_guide_to_mapsFragment
-            )
-        }, 3000)
-        progressBar.dismiss()
+
+            progressBar.dismiss()
+
+            Handler(Looper.getMainLooper()).postDelayed({
+
+                findNavController().navigate(
+                    R.id.action_search_for_tour_guide_to_mapsFragment
+                )
+            }, 2000)
+        }, 1000)
 
 
     }
