@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.achtec.tourist.JetpackNavigation.ui.dashboard.HomeFragment"
+        android:name="com.example.tourguide.JetpackNavigation.ui.dashboard.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -29,7 +29,7 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.achtec.tourist.JetpackNavigation.ui.profile.ProfileFragment"
+        android:name="com.example.tourguide.JetpackNavigation.ui.profile.ProfileFragment"
         android:label="@string/menu_profile"
         tools:layout="@layout/fragment_gallery" >
         <action
@@ -39,7 +39,7 @@
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.achtec.tourist.JetpackNavigation.ui.wallet.WalletFragment"
+        android:name="com.example.tourguide.JetpackNavigation.ui.wallet.WalletFragment"
         android:label="@string/menu_wallet"
         tools:layout="@layout/fragment_wallet" >
         <action
@@ -48,7 +48,7 @@
     </fragment>
     <fragment
         android:id="@+id/search_for_tour_guide"
-        android:name="com.achtec.tourist.JetpackNavigation.ui.dashboard.Search_for_tour_guide"
+        android:name="com.example.tourguide.JetpackNavigation.ui.dashboard.Search_for_tour_guide"
         android:label="Pick up and Destination"
         tools:layout="@layout/fragment_search_for_tour_guide" >
         <action
@@ -60,7 +60,7 @@
     </fragment>
     <fragment
         android:id="@+id/mapsFragment"
-        android:name="com.achtec.tourist.JetpackNavigation.ui.dashboard.MapsFragment"
+        android:name="com.example.tourguide.JetpackNavigation.ui.dashboard.MapsFragment"
         android:label="Make A Request"
         tools:layout="@layout/fragment_maps" >
         <action
@@ -69,7 +69,7 @@
     </fragment>
     <fragment
         android:id="@+id/startTour"
-        android:name="com.achtec.tourist.StartTour"
+        android:name="com.example.tourguide.StartTour"
         android:label="Let's Start your Tour"
         tools:layout="@layout/fragment_start_tour" >
         <action
@@ -84,12 +84,12 @@
     </fragment>
     <fragment
         android:id="@+id/tourGuidehome"
-        android:name="com.achtec.tourist.TourGuidehome"
+        android:name="com.example.tourguide.TourGuidehome"
         android:label="fragment_tour_guidehome"
         tools:layout="@layout/fragment_tour_guidehome" />
     <fragment
         android:id="@+id/recieptFragment"
-        android:name="com.achtec.tourist.RecieptFragment"
+        android:name="com.example.tourguide.RecieptFragment"
         android:label="fragment_reciept"
         tools:layout="@layout/fragment_reciept" >
         <action
@@ -101,7 +101,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFrag"
-        android:name="com.achtec.tourist.Authentication.LoginFrag"
+        android:name="com.example.tourguide.Authentication.LoginFrag"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -116,7 +116,7 @@
     </fragment>
     <fragment
         android:id="@+id/signupTourguide"
-        android:name="com.achtec.tourist.Authentication.SignupTourguide"
+        android:name="com.example.tourguide.Authentication.SignupTourguide"
         android:label="fragment_signup_tourguide"
         tools:layout="@layout/fragment_signup_tourguide" >
         <action
@@ -134,7 +134,7 @@
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.achtec.tourist.SplashFragment"
+        android:name="com.example.tourguide.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -155,7 +155,7 @@
     </fragment>
     <fragment
         android:id="@+id/mapsFragment2"
-        android:name="com.achtec.tourist.MapsFragment"
+        android:name="com.example.tourguide.MapsFragment"
         android:label="fragment_maps2"
         tools:layout="@layout/fragment_maps2" />
 </navigation>
