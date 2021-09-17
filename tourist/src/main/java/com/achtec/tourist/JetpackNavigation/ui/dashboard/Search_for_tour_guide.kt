@@ -249,11 +249,9 @@ class Search_for_tour_guide : Fragment(), TourguidesAdapter.OnItemClickListener 
             "you have chosen  ${ordersList?.get(position)?.name} guide",
             Toast.LENGTH_SHORT
         ).show()
-
-
-
+        progressBar.show()
         Handler(Looper.getMainLooper()).postDelayed({
-            progressBar.show()
+
             findNavController().navigate(
                 R.id.action_search_for_tour_guide_to_mapsFragment
             )
