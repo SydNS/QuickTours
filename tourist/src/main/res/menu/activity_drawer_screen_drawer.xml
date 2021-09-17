@@ -19,7 +19,7 @@
     </group>
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_tour_guides"
+            android:id="@+id/search_for_tour_guide"
             android:icon="@drawable/tour_24"
             android:title="@string/find_tour_guides" />
     </group>
