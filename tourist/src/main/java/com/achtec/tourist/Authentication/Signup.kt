@@ -79,7 +79,6 @@ class SignupTourguide : Fragment() {
     }
 
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -143,63 +142,61 @@ class SignupTourguide : Fragment() {
 //         flow structure controlled here
 
             //checking if the value from the email field is empty or  not
-//            when {
-//                uname.isEmpty() -> {
-//                    username.isErrorEnabled = true
-//                    username.error = getString(R.string.enteruserameneeded)
-//                }
-//
-//                uemail.isEmpty() -> {
-//                    useremailaddress.isErrorEnabled = true
-//                    useremailaddress.error = getString(R.string.enteremailaddress)
-//                }
-//                phone.isEmpty() -> {
-//                    userphone.isErrorEnabled = true
-//                    userphone.error = getString(R.string.enterphonenumber)
-//                }
-//                phone.isNotEmpty() && phone.length != 10 -> {
-//
-//                    userphone.isErrorEnabled = true
-//                    userphone.error = getString(R.string.enter10digitnumbers)
-//                }
-//
-//                password.isEmpty() -> {
-//                    signupbanner.text =
-//                        getString(R.string.confirmpassword)
-//                    userpassword.isErrorEnabled = true
-//                    userpassword.error = getString(R.string.kindlyenterpassword)
-//                }
-//                password.isNotEmpty() && password.length < 8 -> {
-//                    signupbanner.text = getString(R.string.eightcharacterlong)
-//                    userpassword.isErrorEnabled = true
-//                    userpassword.error = getString(R.string.eightcharacterlong)
-//                }
-//                password2.isEmpty() -> {
-//                    signupbanner.text = getString(R.string.confirmpassword)
-//                    userpassword2.isErrorEnabled = true
-//                    userpassword2.error = getString(R.string.kindlyconfirm)
-//                }
-////
-//                password != password2 -> {
-//                    signupbanner.text = getString(R.string.matchingpasswordsneeded)
-//                    userpassword2.isErrorEnabled = true
-//                    userpassword2.error = getString(R.string.matchingpasswordsneeded)
-//                }
-//                userdecision.isEmpty() -> {
-//                    userradiobtn.error = getString(R.string.radiobtnusertype)
-//                    delivererradiobtn.error = getString(R.string.radiobtnusertype)
-//                }
-//
-//                else -> {
-//                    signupbanner.text = getString(R.string.thanks)
-////            method creating the user with the email & password provided
-//                    createAccount(uemail, password, v, userdecision)
-//
-//                }
+            when {
+                uname.isEmpty() -> {
+                    username.isErrorEnabled = true
+                    username.error = getString(R.string.enteruserameneeded)
+                }
 
+                uemail.isEmpty() -> {
+                    useremailaddress.isErrorEnabled = true
+                    useremailaddress.error = getString(R.string.enteremailaddress)
+                }
+                phone.isEmpty() -> {
+                    userphone.isErrorEnabled = true
+                    userphone.error = getString(R.string.enterphonenumber)
+                }
+                phone.isNotEmpty() && phone.length != 10 -> {
 
-            findNavController()
-                .navigate(R.id.action_signupTourguide_to_nav_home)
+                    userphone.isErrorEnabled = true
+                    userphone.error = getString(R.string.enter10digitnumbers)
+                }
+
+                password.isEmpty() -> {
+                    signupbanner.text =
+                        getString(R.string.confirmpassword)
+                    userpassword.isErrorEnabled = true
+                    userpassword.error = getString(R.string.kindlyenterpassword)
+                }
+                password.isNotEmpty() && password.length < 8 -> {
+                    signupbanner.text = getString(R.string.eightcharacterlong)
+                    userpassword.isErrorEnabled = true
+                    userpassword.error = getString(R.string.eightcharacterlong)
+                }
+                password2.isEmpty() -> {
+                    signupbanner.text = getString(R.string.confirmpassword)
+                    userpassword2.isErrorEnabled = true
+                    userpassword2.error = getString(R.string.kindlyconfirm)
+                }
+//
+                password != password2 -> {
+                    signupbanner.text = getString(R.string.matchingpasswordsneeded)
+                    userpassword2.isErrorEnabled = true
+                    userpassword2.error = getString(R.string.matchingpasswordsneeded)
+                }
+                userdecision.isEmpty() -> {
+                    userradiobtn.error = getString(R.string.radiobtnusertype)
+                    delivererradiobtn.error = getString(R.string.radiobtnusertype)
+                }
+
+                else -> {
+                    signupbanner.text = getString(R.string.thanks)
+//            method creating the user with the email & password provided
+                    createAccount(uemail, password, v, userdecision)
+
+                }
+
+            }
         }
 
         return v
@@ -230,7 +227,7 @@ class SignupTourguide : Fragment() {
                 val user = auth.currentUser
 
                 currentUserId = user?.uid.toString()
-                if (appuser=="Tourist"){
+                if (appuser == "Tourist") {
                     customersDatabaseRef = firebasedatabase.reference
                         .child(getString(R.string.users)).child(getString(R.string.clients))
                         .child(currentUserId)
@@ -239,7 +236,7 @@ class SignupTourguide : Fragment() {
                     loadingBar.dismiss()
                     Navigation.findNavController(view)
                         .navigate(R.id.action_signupTourguide_to_nav_home)
-                }else{
+                } else {
 
                     deliverersDatabaseRef =
                         FirebaseDatabase.getInstance().reference.child(getString(R.string.users))
@@ -260,7 +257,6 @@ class SignupTourguide : Fragment() {
                     "Welcome $currentUserId to the $appuser-side",
                     Toast.LENGTH_SHORT
                 ).show()
-
 
 
             } else {
@@ -288,8 +284,9 @@ class SignupTourguide : Fragment() {
 
     }
 
-    private fun OldUser(userstatus:Boolean) {
-        val shared = requireActivity().getSharedPreferences("Old_User_signedup", Context.MODE_PRIVATE)
+    private fun OldUser(userstatus: Boolean) {
+        val shared =
+            requireActivity().getSharedPreferences("Old_User_signedup", Context.MODE_PRIVATE)
         shared.edit().putBoolean("User_old_or_signed_up", false).apply()
     }
 
