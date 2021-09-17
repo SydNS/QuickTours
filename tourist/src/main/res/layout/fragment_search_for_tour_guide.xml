@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,8 +10,8 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
         android:text="@string/from"
         android:textColor="@color/black"
         android:textSize="18sp"
@@ -18,13 +19,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:background="@drawable/editable_theme"
         android:id="@+id/from_search_field"
+        android:hint="Pick Up"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/search_bg"
-        android:drawableStart="@drawable/search_icon"
         android:elevation="2dp"
         android:paddingStart="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/textView8"
@@ -44,13 +45,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <EditText
+        android:hint="Destination"
+        android:background="@drawable/editable_theme"
         android:id="@+id/to_searchView"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/search_bg"
-        android:drawableStart="@drawable/search_icon"
         android:elevation="2dp"
         android:paddingStart="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/textView9"
@@ -63,20 +64,23 @@
         style="@style/Theme.FilledButtons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="268dp"
         android:text="@string/search"
         app:layout_constraintEnd_toEndOf="@+id/to_searchView"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/to_searchView" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:text="@string/available_tours"
         android:textColor="@color/blue"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintEnd_toEndOf="@+id/view_all_Available_tour_btn"
+        app:layout_constraintStart_toStartOf="@+id/tg_search_btn"
         app:layout_constraintTop_toBottomOf="@+id/tg_search_btn" />
 
     <Button
@@ -87,9 +91,10 @@
         android:text="@string/view_all"
         android:textColor="@color/red"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView10"
-        app:layout_constraintEnd_toEndOf="@+id/tg_search_btn"
-        app:layout_constraintTop_toTopOf="@+id/textView10" />
+        app:layout_constraintBottom_toBottomOf="@+id/tg_search_btn"
+        app:layout_constraintEnd_toEndOf="@+id/to_searchView"
+        app:layout_constraintTop_toTopOf="@+id/tg_search_btn"
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_tourguides"
