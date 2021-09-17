@@ -7,7 +7,7 @@
     tools:context=".JetpackNavigation.ui.dashboard.MapsFragment">
 
     <RelativeLayout
-        android:visibility="invisible"
+        android:id="@+id/findplaces"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -15,6 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:visibility="gone"
             android:id="@+id/buttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -58,13 +59,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/buttons"
-            android:layout_margin="20sp">
+            android:layout_margin="2dp">
 
             <fragment
                 android:id="@+id/place_autocomplete_fragment"
-                android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="?attr/actionBarSize" />
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
 
@@ -72,11 +73,11 @@
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/findplaces" />
 
     <Button
         android:id="@+id/order_button"

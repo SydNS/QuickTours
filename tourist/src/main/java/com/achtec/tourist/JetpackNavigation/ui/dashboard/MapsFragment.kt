@@ -24,12 +24,15 @@ import com.firebase.geofire.GeoFire
 import com.firebase.geofire.GeoLocation
 import com.firebase.geofire.GeoQuery
 import com.firebase.geofire.GeoQueryEventListener
+import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.common.api.Status
 import com.google.android.gms.location.*
 import com.google.android.gms.location.places.Place
 import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment
+
 import com.google.android.gms.location.places.ui.PlaceSelectionListener
+
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -39,6 +42,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.libraries.places.api.Places
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.util.ArrayList
@@ -55,7 +59,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
     private var mFusedLocationClient: FusedLocationProviderClient? = null
 
     private var mLogout: Button? =
-        null,
+        null
     private var mRequest: android.widget.Button? = null
     private var mSettings: android.widget.Button? = null
     private var mHistory: android.widget.Button? = null
@@ -100,7 +104,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
         fragmentMapsBinding = FragmentMapsBinding.inflate(inflater, container, false)
 
 
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
 
         mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment!!.getMapAsync(this)
@@ -152,9 +156,9 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
             )
             pickupMarker = mMap!!.addMarker(
                 MarkerOptions().position(pickupLocation).title("Pickup Here")
-                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.patient))
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.tour_guide))
             )
-            mRequest!!.text = "Getting Your Ambulance..."
+            mRequest!!.text = "Getting Your Tour Guide..."
             getClosestDriver()
         }
 
@@ -168,10 +172,14 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
         mHistory!!.setOnClickListener {
         }
 
+        if (!Places.isInitialized()) {
+            Places.initialize(requireActivity(), "AIzaSyBqi1z_qeYRs14m9snAo2124KYY" );
+        }
+
         val autocompleteFragment =
             requireFragmentManager().findFragmentById(R.id.place_autocomplete_fragment) as PlaceAutocompleteFragment?
 
-        autocompleteFragment!!.setOnPlaceSelectedListener(object : PlaceSelectionListener {
+        autocompleteFragment?.setOnPlaceSelectedListener(object : PlaceSelectionListener {
             override fun onPlaceSelected(place: Place) {
                 // TODO: Get info about the selected place.
                 destination = place.name.toString()
@@ -196,7 +204,6 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
     //    methods
 
 
-
     private var radius = 1
     private var driverFound = false
     private var driverFoundID: String? = null
@@ -211,10 +218,10 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
             GeoLocation(
                 pickupLocation!!.latitude,
                 pickupLocation!!.longitude
-            ), radius as Double
+            ), radius.toDouble()
         )
-        geoQuery.removeAllListeners()
-        geoQuery.addGeoQueryEventListener(object : GeoQueryEventListener() {
+        geoQuery?.removeAllListeners()
+        geoQuery?.addGeoQueryEventListener(object : GeoQueryEventListener {
             override fun onKeyEntered(key: String?, location: GeoLocation?) {
                 if (!driverFound && requestBol) {
                     val mCustomerDatabase =
@@ -238,7 +245,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
                                         ).child("customerRequest")
                                 val customerId = FirebaseAuth.getInstance().currentUser!!
                                     .uid
-                                val map: HashMap<*, *> = HashMap<Any?, Any?>()
+                                val map: HashMap<String?, Any?> = HashMap<String?, Any?>()
                                 map["customerRideId"] = customerId
                                 map["destination"] = destination
                                 map["destinationLat"] = destinationLatlng!!.latitude
@@ -274,7 +281,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
     private var driverLocationRefListener: ValueEventListener? = null
     private fun getDriverLocation() {
         driverLocationRef =
-            FirebaseDatabase.getInstance().reference.child("driversWorking").child(driverFoundID)
+            FirebaseDatabase.getInstance().reference.child("driversWorking").child(driverFoundID!!)
                 .child("l")
         driverLocationRefListener =
             driverLocationRef!!.addValueEventListener(object : ValueEventListener {
@@ -308,13 +315,13 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
                             mRequest!!.text = "Tour Guide Found: $dis Kms away..."
                         }
                         mDriverMarker = mMap!!.addMarker(
-                            MarkerOptions().position(driverLatLng).title("Your Ambulance")
-                                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ambulance))
+                            MarkerOptions().position(driverLatLng).title("Your Guide")
+                                .icon(BitmapDescriptorFactory.fromResource(R.drawable.tour_guide))
                         )
                     }
                 }
 
-                override fun onCancelled( databaseError: DatabaseError) {}
+                override fun onCancelled(databaseError: DatabaseError) {}
             })
     }
 
@@ -322,7 +329,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
         mDriverInfo!!.visibility = View.VISIBLE
         val mCustomerDatabase =
             FirebaseDatabase.getInstance().reference.child("Users").child("Drivers")
-                .child(driverFoundID)
+                .child(driverFoundID!!)
         mCustomerDatabase.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot.exists() && dataSnapshot.childrenCount > 0) {
@@ -361,7 +368,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
         mLocationRequest!!.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(
-                    activity,
+                    requireActivity(),
                     Manifest.permission.ACCESS_FINE_LOCATION
                 ) === PackageManager.PERMISSION_GRANTED
             ) {
@@ -406,7 +413,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
                 val driverLocation = LatLng(location.latitude, location.longitude)
                 val mDriverMarker = mMap!!.addMarker(
                     MarkerOptions().position(driverLocation).title(key)
-                        .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ambulance))
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.tour_guide))
                 )
                 mDriverMarker.setTag(key)
                 markers.add(mDriverMarker)
@@ -520,7 +527,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
                     }
                 }
 
-                override fun onCancelled( databaseError: DatabaseError) {}
+                override fun onCancelled(databaseError: DatabaseError) {}
             })
     }
 
@@ -554,5 +561,21 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
         mDriverInfo!!.visibility = View.GONE
         mDriverName!!.text = ""
         mDriverPhone!!.text = ""
+    }
+
+    override fun onConnected(p0: Bundle?) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onConnectionSuspended(p0: Int) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onConnectionFailed(p0: ConnectionResult) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onLocationChanged(p0: Location?) {
+        TODO("Not yet implemented")
     }
 }
