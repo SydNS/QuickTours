@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -15,6 +16,8 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.achtec.tourist.R
 import com.achtec.tourist.databinding.ActivityDrawerScreenBinding
 
@@ -43,7 +46,7 @@ class DrawerScreenActivity : AppCompatActivity(), MyDrawerController {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.loginFrag
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -81,8 +84,25 @@ class DrawerScreenActivity : AppCompatActivity(), MyDrawerController {
         return true
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        return when (item.itemId) {
+            R.id.action_settings -> {
+
+                true
+            }
+            R.id.action_logout -> {
+                navController.navigate(R.id.action_nav_home_to_loginFrag)
+                true
+            }
+            else ->
+                super.onOptionsItemSelected(item)
+        }
+    }
+
+    lateinit var navController: NavController
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_drawer_screen)
+        navController = findNavController(R.id.nav_host_fragment_content_drawer_screen)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
