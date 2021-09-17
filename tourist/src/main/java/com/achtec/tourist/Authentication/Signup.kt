@@ -1,4 +1,4 @@
-package com.example.tourguide.Authentication
+package com.achtec.tourist.Authentication
 
 import android.app.ProgressDialog
 import android.content.ContentValues
@@ -77,6 +77,7 @@ class SignupTourguide : Fragment() {
 //                .navigate(R.id.signup)
         }
     }
+
 
 
     override fun onCreateView(
@@ -225,6 +226,7 @@ class SignupTourguide : Fragment() {
 
                 // Sign in success, update UI with the signed-in user's information
                 Log.d(ContentValues.TAG, "createUserWithEmail:success")
+                OldUser(true)
                 val user = auth.currentUser
 
                 currentUserId = user?.uid.toString()
@@ -278,7 +280,6 @@ class SignupTourguide : Fragment() {
     }
 
     private fun storeDecidedUser(usertype: String) {
-
         val sharedPreferences =
             requireActivity().getSharedPreferences("OldUserType", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
@@ -286,6 +287,12 @@ class SignupTourguide : Fragment() {
         editor.apply()
 
     }
+
+    private fun OldUser(userstatus:Boolean) {
+        val shared = requireActivity().getSharedPreferences("Old_User_signedup", Context.MODE_PRIVATE)
+        shared.edit().putBoolean("User_old_or_signed_up", false).apply()
+    }
+
 
     override fun onResume() {
         super.onResume()
