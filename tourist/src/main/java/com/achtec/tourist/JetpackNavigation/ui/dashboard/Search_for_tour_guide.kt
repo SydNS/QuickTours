@@ -246,7 +246,6 @@ class Search_for_tour_guide : Fragment(), TourguidesAdapter.OnItemClickListener 
         progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressBar.setProgress(0)
         progressBar.setMax(100)
-        progressBar.show()
         Toast.makeText(
             requireActivity(),
             "you have chosen  ${ordersList?.get(position)?.name} guide",
@@ -254,6 +253,7 @@ class Search_for_tour_guide : Fragment(), TourguidesAdapter.OnItemClickListener 
         ).show()
         Handler(Looper.getMainLooper()).postDelayed({
 
+            progressBar.show()
             findNavController().navigate(
                 R.id.action_search_for_tour_guide_to_mapsFragment
             )
