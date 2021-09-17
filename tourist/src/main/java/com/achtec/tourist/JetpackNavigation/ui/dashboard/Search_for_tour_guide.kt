@@ -24,9 +24,6 @@ import com.google.android.libraries.places.widget.AutocompleteSupportFragment
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener
 
 
-
-
-
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
@@ -66,7 +63,13 @@ class Search_for_tour_guide : Fragment(), TourguidesAdapter.OnItemClickListener 
         val root: View = _binding!!.root
         // Inflate the layout for this fragment
 
-        progressBar= ProgressDialog(requireActivity());
+        progressBar = ProgressDialog(requireActivity());
+        progressBar.setCancelable(true);
+        progressBar.setMessage("Getting Tour Guides Near You")
+        progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressBar.setProgress(0)
+        progressBar.setMax(100)
+
         ordersList = ArrayList()
         ordersList!!.add(
             TourguideModel(
@@ -201,7 +204,8 @@ class Search_for_tour_guide : Fragment(), TourguidesAdapter.OnItemClickListener 
 
         return root
     }
-    lateinit var progressBar:ProgressDialog
+
+    lateinit var progressBar: ProgressDialog
 
     companion object {
         /**
@@ -246,14 +250,11 @@ class Search_for_tour_guide : Fragment(), TourguidesAdapter.OnItemClickListener 
             Toast.LENGTH_SHORT
         ).show()
 
-        progressBar.setCancelable(true);
-        progressBar.setMessage("Getting Tour Guides Near You")
-        progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        progressBar.setProgress(0)
-        progressBar.setMax(100)
-        progressBar.show()
+
+
         Handler(Looper.getMainLooper()).postDelayed({
-             findNavController().navigate(
+            progressBar.show()
+            findNavController().navigate(
                 R.id.action_search_for_tour_guide_to_mapsFragment
             )
         }, 3000)
