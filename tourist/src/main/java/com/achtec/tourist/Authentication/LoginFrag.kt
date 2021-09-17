@@ -96,10 +96,9 @@ class LoginFrag : Fragment() {
 
         }
 
-//        login(loginbtn, login_emailaddress, login_password, loginbanner)
 
         loginbtn.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFrag_to_nav_home)
+            login(loginbtn, login_emailaddress, login_password, loginbanner)
         }
 
 
@@ -158,14 +157,17 @@ class LoginFrag : Fragment() {
         auth.signInWithEmailAndPassword(uemail, upassd).addOnCompleteListener {
             if (it.isSuccessful) {
 
-                if (WhatTypeOfUser() == "Tourist") {
-                    NavHostFragment
-                        .findNavController(this)
-                        .navigate(R.id.action_loginFrag_to_nav_home)
+                when {
+                    WhatTypeOfUser() == "Tourist" -> {
+                        NavHostFragment
+                            .findNavController(this)
+                            .navigate(R.id.action_loginFrag_to_nav_home)
 
-                } else {
-                    NavHostFragment.findNavController(this)
-                        .navigate(R.id.action_loginFrag_to_tourGuidehome)
+                    }
+                    WhatTypeOfUser() == "Tourist" -> {
+                        NavHostFragment.findNavController(this)
+                            .navigate(R.id.action_loginFrag_to_tourGuidehome)
+                    }
                 }
                 Toast.makeText(requireActivity(), "${auth.currentUser?.email}", Toast.LENGTH_LONG)
                     .show()
@@ -188,7 +190,7 @@ class LoginFrag : Fragment() {
     private fun WhatTypeOfUser(): String? {
         val sharedPreferences =
             requireActivity().getSharedPreferences("OldUserType", Context.MODE_PRIVATE)
-        val isOld = sharedPreferences.getString("Type", null)
+        val isOld = sharedPreferences.getString("Type", "Tourist")
         return isOld
     }
 
