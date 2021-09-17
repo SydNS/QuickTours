@@ -3,7 +3,7 @@
 <item>
     <layer-list>
         <item android:drawable="@drawable/bg2" />
-        <item android:drawable="@drawable/overlaybg" />
+        <item android:drawable="@drawable/view_bg" />
     </layer-list>
 </item>
 </selector>
