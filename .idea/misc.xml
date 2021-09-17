@@ -106,6 +106,9 @@
         <entry key="tourist/src/main/res/layout/app_bar_drawer_screen.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/content_drawer_screen.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/fragment_gallery.xml" value="0.196875" />
+        <entry key="tourist/src/main/res/layout/fragment_home.xml" value="0.196875" />
+        <entry key="tourist/src/main/res/layout/fragment_maps.xml" value="0.2939346811819596" />
+        <entry key="tourist/src/main/res/layout/fragment_search_for_tour_guide.xml" value="0.4393063583815029" />
         <entry key="tourist/src/main/res/menu/activity_drawer_screen_drawer.xml" value="0.5" />
         <entry key="tourist/src/main/res/menu/drawer_screen.xml" value="0.196875" />
       </map>

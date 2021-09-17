@@ -14,6 +14,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TourGuide">
+
+
+<!--        <meta-data-->
+<!--            android:name="com.google.android.geo.API_KEY"-->
+<!--            android:value="AIzaSyDhwReQXLN7tY9ezrTmwoIU4u18hePSP3g"/>-->
         <activity
             android:name="com.achtec.tourist.SettingsActivity"
             android:exported="true" />
