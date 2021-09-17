@@ -45,6 +45,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.libraries.places.api.Places
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.fragment_maps.*
 import java.util.ArrayList
 import java.util.HashMap
 
@@ -122,6 +123,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
         mRatingBar = fragmentMapsBinding.ratingBar as RatingBar
         mHistory = fragmentMapsBinding.history as Button
         mLogout = fragmentMapsBinding.logout as Button
+        val order_button = fragmentMapsBinding.orderButton as Button
 
 
         fragmentMapsBinding.orderButton.setOnClickListener {
@@ -137,7 +139,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
         })
 
 
-        mRequest!!.setOnClickListener {
+        order_button.setOnClickListener {
             if (requestBol) {
                 endRide()
             } else {
@@ -177,7 +179,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
         }
 
         val autocompleteFragment =
-            requireFragmentManager().findFragmentById(R.id.place_autocomplete_fragment) as PlaceAutocompleteFragment?
+            childFragmentManager.findFragmentById(R.id.place_autocomplete_fragment) as PlaceAutocompleteFragment?
 
         autocompleteFragment?.setOnPlaceSelectedListener(object : PlaceSelectionListener {
             override fun onPlaceSelected(place: Place) {
@@ -248,8 +250,8 @@ class MapsFragment : Fragment(), OnMapReadyCallback,
                                 val map: HashMap<String?, Any?> = HashMap<String?, Any?>()
                                 map["customerRideId"] = customerId
                                 map["destination"] = destination
-                                map["destinationLat"] = destinationLatlng!!.latitude
-                                map["destinationLng"] = destinationLatlng!!.longitude
+                                map["destinationLat"] = -1.2864
+                                map["destinationLng"] = 36.8264
                                 driverRef.updateChildren(map)
                                 getDriverLocation()
                                 getDriverInfo()
