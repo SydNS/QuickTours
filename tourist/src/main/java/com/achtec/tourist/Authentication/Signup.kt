@@ -287,7 +287,7 @@ class SignupTourguide : Fragment() {
     private fun OldUser(userstatus: Boolean) {
         val shared =
             requireActivity().getSharedPreferences("Old_User_signedup", Context.MODE_PRIVATE)
-        shared.edit().putBoolean("User_old_or_signed_up", false).apply()
+        shared.edit().putBoolean("User_old_or_signed_up", true).apply()
     }
 
 
