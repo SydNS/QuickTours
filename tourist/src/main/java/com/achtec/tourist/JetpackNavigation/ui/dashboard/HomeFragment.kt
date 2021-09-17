@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.achtec.tourist.R
 import com.achtec.tourist.databinding.FragmentHomeBinding
 
+
 class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
