@@ -64,11 +64,7 @@ class Search_for_tour_guide : Fragment(), TourguidesAdapter.OnItemClickListener 
         // Inflate the layout for this fragment
 
         progressBar = ProgressDialog(requireActivity());
-        progressBar.setCancelable(true);
-        progressBar.setMessage("Getting Tour Guides Near You")
-        progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        progressBar.setProgress(0)
-        progressBar.setMax(100)
+
 
         ordersList = ArrayList()
         ordersList!!.add(
@@ -244,12 +240,18 @@ class Search_for_tour_guide : Fragment(), TourguidesAdapter.OnItemClickListener 
     }
 
     override fun onSelectingRider(position: Int) {
+
+        progressBar.setCancelable(true);
+        progressBar.setMessage("Getting Tour Guides Near You")
+        progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressBar.setProgress(0)
+        progressBar.setMax(100)
+        progressBar.show()
         Toast.makeText(
             requireActivity(),
             "you have chosen  ${ordersList?.get(position)?.name} guide",
             Toast.LENGTH_SHORT
         ).show()
-        progressBar.show()
         Handler(Looper.getMainLooper()).postDelayed({
 
             findNavController().navigate(
