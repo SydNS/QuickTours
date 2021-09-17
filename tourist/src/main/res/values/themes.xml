@@ -19,6 +19,8 @@
         <item name="android:windowTranslucentNavigation" tools:targetApi="kitkat">true</item>
 
         <item name="fontFamily">@font/caviar_dreams</item>
+
+        <item name="android:windowBackground">@drawable/activitybacground</item>
     </style>
 
     <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">
@@ -71,7 +73,10 @@
     <style name="Theme.TourGuide.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="background">@drawable/activitybacground</item>
+        <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>
+        <item name="android:windowTranslucentNavigation" tools:targetApi="kitkat">true</item>
+        <item name="background">@android:color/transparent</item>
+        <item name="android:windowDisablePreview">true</item>
     </style>
 
     <style name="Theme.TourGuide.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
