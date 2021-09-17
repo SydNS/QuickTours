@@ -84,7 +84,7 @@
     </fragment>
     <fragment
         android:id="@+id/tourGuidehome"
-        android:name="com.achtec.tourist.TourGuidehome"
+        android:name="com.achtec.tourist.JetpackNavigation.ui.dashboard.HomeFragment"
         android:label="fragment_tour_guidehome"
         tools:layout="@layout/fragment_tour_guidehome" />
     <fragment
