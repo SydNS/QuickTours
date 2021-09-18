@@ -1,9 +1,7 @@
 package com.achtec.tourist.JetpackNavigation.ui.profile
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -14,6 +12,10 @@ import com.achtec.tourist.R
 import com.achtec.tourist.databinding.FragmentGalleryBinding
 import com.achtec.tourist.databinding.TourguideitemviewBinding
 import kotlinx.android.synthetic.main.fragment_gallery.*
+import android.view.MenuInflater
+
+
+
 
 
 class ProfileFragment : Fragment() {
@@ -25,13 +27,12 @@ class ProfileFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        galleryViewModel =
-            ViewModelProvider(this).get(GalleryViewModel::class.java)
 
         _binding = FragmentGalleryBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -41,6 +42,28 @@ class ProfileFragment : Fragment() {
         }
 
         return root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.profile_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        return when (item.itemId) {
+            R.id.action_profile -> {
+
+                true
+            }
+            R.id.action_logout -> {
+
+                findNavController().navigate(R.id.action_nav_home_to_loginFrag)
+                true
+            }
+            else ->
+                super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onDestroyView() {
