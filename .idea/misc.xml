@@ -119,7 +119,11 @@
         <entry key="tourist/src/main/res/layout/fragment_signup_tourguide.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/fragment_signup_tourist.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/fragment_splash.xml" value="0.196875" />
+        <entry key="tourist/src/main/res/layout/fragment_start_tour.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/fragment_tour_guidehome.xml" value="0.196875" />
+        <entry key="tourist/src/main/res/layout/fragment_wallet.xml" value="0.196875" />
+        <entry key="tourist/src/main/res/layout/tourguideitemview.xml" value="0.196875" />
+        <entry key="tourist/src/main/res/layout/transfer.xml" value="0.196875" />
         <entry key="tourist/src/main/res/menu/activity_drawer_screen_drawer.xml" value="0.5" />
         <entry key="tourist/src/main/res/menu/drawer_screen.xml" value="0.196875" />
       </map>
