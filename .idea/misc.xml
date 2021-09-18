@@ -109,6 +109,7 @@
         <entry key="tourist/src/main/res/layout/activity_drawer_screen.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/activity_tourist_map.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/app_bar_drawer_screen.xml" value="0.196875" />
+        <entry key="tourist/src/main/res/layout/bottomsheet_layout.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/content_drawer_screen.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/fragment_gallery.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/fragment_home.xml" value="0.196875" />
@@ -126,6 +127,7 @@
         <entry key="tourist/src/main/res/layout/transfer.xml" value="0.196875" />
         <entry key="tourist/src/main/res/menu/activity_drawer_screen_drawer.xml" value="0.5" />
         <entry key="tourist/src/main/res/menu/drawer_screen.xml" value="0.196875" />
+        <entry key="tourist/src/main/res/menu/profile_menu.xml" value="0.196875" />
       </map>
     </option>
   </component>
