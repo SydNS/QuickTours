@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="10dp"
-    android:background="@drawable/curved_white_top"
+    android:background="@color/white"
     app:cardElevation="5dp">
 
     <RelativeLayout
