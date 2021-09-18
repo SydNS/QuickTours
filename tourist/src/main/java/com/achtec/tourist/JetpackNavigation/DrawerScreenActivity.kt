@@ -29,6 +29,9 @@ class DrawerScreenActivity : AppCompatActivity(), MyDrawerController {
 
     lateinit var drawerLayout: DrawerLayout
 
+
+    lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -41,7 +44,7 @@ class DrawerScreenActivity : AppCompatActivity(), MyDrawerController {
         val navView: NavigationView = binding.navView
 
 
-        val navController = findNavController(R.id.nav_host_fragment_content_drawer_screen)
+         navController = findNavController(R.id.nav_host_fragment_content_drawer_screen)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
@@ -88,11 +91,12 @@ class DrawerScreenActivity : AppCompatActivity(), MyDrawerController {
 
         return when (item.itemId) {
             R.id.action_settings -> {
+                navController.navigate(R.id.nav_gallery)
 
                 true
             }
             R.id.action_logout -> {
-                navController.navigate(R.id.action_nav_home_to_loginFrag)
+                navController.navigate(R.id.loginFrag)
                 true
             }
             else ->
@@ -100,7 +104,6 @@ class DrawerScreenActivity : AppCompatActivity(), MyDrawerController {
         }
     }
 
-    lateinit var navController: NavController
     override fun onSupportNavigateUp(): Boolean {
         navController = findNavController(R.id.nav_host_fragment_content_drawer_screen)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
@@ -108,13 +111,13 @@ class DrawerScreenActivity : AppCompatActivity(), MyDrawerController {
 
     override fun lockDrawer() {
 
-        supportActionBar?.hide();
+        supportActionBar?.hide()
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
     }
 
     override fun unlockDrawer() {
 
-        supportActionBar?.show();
+        supportActionBar?.show()
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
     }
 
