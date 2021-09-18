@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".JetpackNavigation.ui.dashboard.MapsFragment">
 
     <RelativeLayout
@@ -15,10 +16,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:visibility="gone"
             android:id="@+id/buttons"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <Button
                 android:id="@+id/logout"
@@ -56,11 +57,11 @@
         </LinearLayout>
 
         <androidx.cardview.widget.CardView
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/buttons"
-            android:layout_margin="2dp">
+            android:layout_margin="2dp"
+            android:visibility="gone">
 
             <fragment
                 android:id="@+id/place_autocomplete_fragment"
@@ -84,8 +85,8 @@
         android:id="@+id/order_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="ORDER"
         android:background="@drawable/curvedtop"
+        android:text="ORDER"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -176,7 +177,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:background="#80ced6"
-                android:text="Request An Ambulance" />
+                android:text="Request An Guide" />
         </LinearLayout>
 
     </LinearLayout>

@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:minWidth="300dp"
     android:paddingTop="10dp"
+    android:background="@color/white"
     tools:context=".RecieptFragment">
 
     <TextView

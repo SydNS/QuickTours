@@ -42,12 +42,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="29dp"
                 android:layout_marginLeft="29dp"
                 android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
-                android:orientation="vertical"
-                android:layout_marginStart="29dp"
-                android:layout_marginEnd="20dp">
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="100dp"
@@ -114,6 +114,7 @@
                     android:textColorHint="@color/white"
                     app:boxStrokeColor="@color/white"
                     app:boxStrokeWidth="1dp"
+                    app:counterMaxLength="10"
                     app:endIconDrawable="@android:drawable/ic_dialog_email">
 
 
@@ -122,6 +123,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
                         android:inputType="phone"
+                        android:maxLength="10"
                         android:paddingStart="20dp"
                         android:paddingTop="20dp"
                         android:paddingEnd="20dp"
@@ -140,6 +142,8 @@
                     android:textColorHint="@color/white"
                     app:boxStrokeColor="@color/white"
                     app:boxStrokeWidth="1dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="15"
                     app:endIconDrawable="@android:drawable/ic_lock_lock"
                     app:passwordToggleEnabled="true">
 
@@ -166,6 +170,8 @@
                     android:textColorHint="@color/white"
                     app:boxStrokeColor="@color/white"
                     app:boxStrokeWidth="1dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="15"
                     app:endIconDrawable="@android:drawable/ic_lock_lock"
                     app:endIconTint="@color/white"
                     app:passwordToggleEnabled="true">
@@ -205,11 +211,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical|end"
+                        android:layout_marginStart="92dp"
                         android:layout_marginLeft="92dp"
                         android:layout_weight="0.13"
                         android:text="@string/roles_deliverer"
-                        android:textSize="18sp"
-                        android:layout_marginStart="92dp" />
+                        android:textSize="18sp" />
 
 
                 </RadioGroup>
@@ -257,6 +263,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="20.8dp"
                         android:layout_marginBottom="30.5dp"
@@ -265,8 +272,7 @@
                         android:text="@string/login"
                         android:textColor="#000000"
                         android:textSize="18sp"
-                        android:textStyle="normal"
-                        android:layout_marginStart="5dp" />
+                        android:textStyle="normal" />
 
                 </LinearLayout>
 
