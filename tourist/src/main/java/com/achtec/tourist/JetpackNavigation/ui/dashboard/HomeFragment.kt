@@ -32,12 +32,16 @@ class HomeFragment : Fragment() {
 
         _binding!!.findtourguidesforyou.setOnClickListener {
             findNavController().navigate(R.id.action_nav_home_to_search_for_tour_guide)
-            Toast.makeText(requireActivity(),"here ",Toast.LENGTH_LONG).show()
+
         }
         _binding !!. walletbtn . setOnClickListener {
             findNavController().navigate(R.id.action_nav_home_to_nav_slideshow)
-            Toast.makeText(requireActivity(), "here ", Toast.LENGTH_LONG).show()
         }
+        _binding !!. circleImageView . setOnClickListener {
+
+            findNavController().navigate(R.id.action_nav_home_to_nav_gallery)
+        }
+
 
         return root
     }
@@ -46,4 +50,6 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+
 }
