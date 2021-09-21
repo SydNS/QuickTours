@@ -164,7 +164,7 @@ class LoginFrag : Fragment() {
                             .navigate(R.id.action_loginFrag_to_nav_home)
 
                     }
-                    WhatTypeOfUser() == "Tourist" -> {
+                    WhatTypeOfUser() == getString(R.string.tourguide) -> {
                         NavHostFragment.findNavController(this)
                             .navigate(R.id.action_loginFrag_to_tourGuidehome)
                     }
