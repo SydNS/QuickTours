@@ -32,15 +32,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".JetpackNavigation.TouristMap"
-            android:exported="true"
-            android:theme="@style/Theme.TourGuide.NoActionBar" /> <!-- <meta-data -->
         <!-- android:name="com.google.android.geo.API_KEY" -->
         <!-- android:value="AIzaSyDhwReQXLN7tY9ezrTmwoIU4u18hePSP3g"/> -->
-        <activity
-            android:name=".SettingsActivity"
-            android:exported="true" />
+
         <activity
             android:name=".JetpackNavigation.DrawerScreenActivity"
             android:exported="true"
@@ -51,9 +45,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".TransportProviderAccount.TransportProviderProfile"
-            android:exported="true" />
 
     </application>
 
