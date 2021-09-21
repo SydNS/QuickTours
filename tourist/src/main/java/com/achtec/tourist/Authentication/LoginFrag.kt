@@ -49,6 +49,7 @@ class LoginFrag : Fragment() {
     lateinit var upassd: String
 
 
+
     //firebase variables
     private lateinit var auth: FirebaseAuth
     private lateinit var firebaseAuthListner: FirebaseAuth.AuthStateListener
@@ -98,6 +99,10 @@ class LoginFrag : Fragment() {
 
 
         loginbtn.setOnClickListener {
+            // loading bar that show the user some thing is happening
+            loadingBar.setTitle("Please wait :")
+            loadingBar.setMessage("While system is performing processing on your data...")
+            loadingBar.show()
             login(loginbtn, login_emailaddress, login_password, loginbanner)
         }
 
@@ -154,24 +159,28 @@ class LoginFrag : Fragment() {
         upassd: String,
         loginbanner: TextView
     ) {
+
         auth.signInWithEmailAndPassword(uemail, upassd).addOnCompleteListener {
             if (it.isSuccessful) {
 
                 when {
-                    WhatTypeOfUser() == "Tourist" -> {
+                    WhatTypeOfUser() == "Tour guide" -> {
+                        loadingBar.dismiss()
+                        NavHostFragment.findNavController(this)
+                            .navigate(R.id.action_loginFrag_to_tourGuidehome)
+                    }
+                    else -> {
+                        loadingBar.dismiss()
                         NavHostFragment
                             .findNavController(this)
                             .navigate(R.id.action_loginFrag_to_nav_home)
 
                     }
-                    WhatTypeOfUser() == getString(R.string.tourguide) -> {
-                        NavHostFragment.findNavController(this)
-                            .navigate(R.id.action_loginFrag_to_tourGuidehome)
-                    }
                 }
                 Toast.makeText(requireActivity(), "${auth.currentUser?.email}", Toast.LENGTH_LONG)
                     .show()
             } else {
+                loadingBar.dismiss()
                 loginbanner.text = it.exception?.message.toString()
                 Toast.makeText(
                     requireActivity(),
