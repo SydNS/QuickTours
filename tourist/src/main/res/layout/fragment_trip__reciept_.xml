@@ -6,7 +6,7 @@
     android:minWidth="300dp"
     android:paddingTop="10dp"
     android:background="@color/white"
-    tools:context=".RecieptFragment">
+    tools:context=".JetpackNavigation.ui_tourguide.RecieptFragment">
 
     <TextView
         android:id="@+id/textView2"

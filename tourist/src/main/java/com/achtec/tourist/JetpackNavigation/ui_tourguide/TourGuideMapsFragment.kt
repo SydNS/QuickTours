@@ -1,8 +1,7 @@
-package com.achtec.tourist
+package com.achtec.tourist.JetpackNavigation.ui_tourguide
 
 import android.Manifest
 import android.app.AlertDialog
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Build
@@ -17,6 +16,7 @@ import android.widget.*
 import androidx.annotation.NonNull
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.achtec.tourist.R
 import com.directions.route.AbstractRouting
 import com.directions.route.Routing
 import com.directions.route.RoutingListener
@@ -31,8 +31,6 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.squareup.okhttp.Route
-import com.squareup.okhttp.internal.http.RouteException
 import java.util.ArrayList
 import java.util.HashMap
 

@@ -1,10 +1,11 @@
-package com.achtec.tourist
+package com.achtec.tourist.JetpackNavigation.ui_tourguide
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.achtec.tourist.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -13,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [Trip_Reciept_Fragment.newInstance] factory method to
+ * Use the [StartTour.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Trip_Reciept_Fragment : Fragment() {
+class StartTour : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,7 +35,7 @@ class Trip_Reciept_Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_trip__reciept_, container, false)
+        return inflater.inflate(R.layout.fragment_start_tour, container, false)
     }
 
     companion object {
@@ -44,12 +45,12 @@ class Trip_Reciept_Fragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment Trip_Reciept_Fragment.
+         * @return A new instance of fragment StartTour.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            Trip_Reciept_Fragment().apply {
+            StartTour().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

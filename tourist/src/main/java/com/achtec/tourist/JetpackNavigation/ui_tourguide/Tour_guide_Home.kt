@@ -1,4 +1,4 @@
-package com.achtec.tourist
+package com.achtec.tourist.JetpackNavigation.ui_tourguide
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.achtec.tourist.R
 
 class Tour_guide_Home : Fragment() {
 

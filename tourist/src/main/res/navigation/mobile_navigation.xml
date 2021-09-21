@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/tourGuidehome"
-        android:name="com.achtec.tourist.Tour_guide_Home"
+        android:name="com.achtec.tourist.JetpackNavigation.ui_tourguide.Tour_guide_Home"
         android:label="fragment_tour_guidehome"
         tools:layout="@layout/fragment_tour_guidehome">
         <action
@@ -99,7 +99,7 @@
     </fragment>
     <fragment
         android:id="@+id/recieptFragment"
-        android:name="com.achtec.tourist.RecieptFragment"
+        android:name="com.achtec.tourist.JetpackNavigation.ui_tourguide.RecieptFragment"
         android:label="fragment_reciept"
         tools:layout="@layout/fragment_reciept">
         <action
@@ -132,7 +132,7 @@
     </fragment>
     <fragment
         android:id="@+id/startTour"
-        android:name="com.achtec.tourist.StartTour"
+        android:name="com.achtec.tourist.JetpackNavigation.ui_tourguide.StartTour"
         android:label="Let's Start your Tour"
         tools:layout="@layout/fragment_start_tour">
         <action
@@ -168,7 +168,7 @@
     </fragment>
     <fragment
         android:id="@+id/tourGuideMapsFragment"
-        android:name="com.achtec.tourist.TourGuideMapsFragment"
+        android:name="com.achtec.tourist.JetpackNavigation.ui_tourguide.TourGuideMapsFragment"
         android:label="fragment_tour_guide_maps"
         tools:layout="@layout/fragment_tour_guide_maps">
         <action
@@ -177,12 +177,12 @@
     </fragment>
     <fragment
         android:id="@+id/wallet_Guide_Fragment"
-        android:name="com.achtec.tourist.Wallet_Guide_Fragment"
+        android:name="com.achtec.tourist.JetpackNavigation.ui_tourguide.Wallet_Guide_Fragment"
         android:label="fragment_wallet__guide_"
         tools:layout="@layout/fragment_wallet__guide_" />
     <fragment
         android:id="@+id/trip_Reciept_Fragment"
-        android:name="com.achtec.tourist.Trip_Reciept_Fragment"
+        android:name="com.achtec.tourist.JetpackNavigation.ui_tourguide.Trip_Reciept_Fragment"
         android:label="fragment_trip__reciept_"
         tools:layout="@layout/fragment_trip__reciept_">
         <action
@@ -191,7 +191,7 @@
     </fragment>
     <fragment
         android:id="@+id/profile_Fragment"
-        android:name="com.achtec.tourist.Profile_Fragment"
+        android:name="com.achtec.tourist.JetpackNavigation.ui_tourguide.Profile_Fragment"
         android:label="fragment_profile_"
         tools:layout="@layout/fragment_profile_">
         <action
