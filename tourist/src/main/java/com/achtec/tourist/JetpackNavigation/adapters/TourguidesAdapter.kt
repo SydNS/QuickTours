@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.achtec.tourist.JetpackNavigation.TourguideModel
+import com.achtec.tourist.JetpackNavigation.ui.profile.TourguideModel
 import com.achtec.tourist.R
 
 class TourguidesAdapter(

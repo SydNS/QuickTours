@@ -8,20 +8,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.achtec.tourist.JetpackNavigation.TourguideModel
+import com.achtec.tourist.JetpackNavigation.ui.profile.TourguideModel
 import com.achtec.tourist.JetpackNavigation.adapters.TourguidesAdapter
 import com.achtec.tourist.R
 import com.achtec.tourist.databinding.FragmentSearchForTourGuideBinding
-import com.google.android.gms.common.api.Status
-import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment
-import com.google.android.libraries.places.api.Places
-import com.google.android.libraries.places.api.model.Place
-import com.google.android.libraries.places.widget.AutocompleteSupportFragment
-import com.google.android.libraries.places.widget.listener.PlaceSelectionListener
 
 
 // TODO: Rename parameter arguments, choose names that match

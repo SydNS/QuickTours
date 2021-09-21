@@ -105,8 +105,11 @@
         <entry key="tourguide/src/main/res/menu/drawer_screen.xml" value="0.196875" />
         <entry key="tourist/src/main/res/drawable/activitybacground.xml" value="0.21302083333333333" />
         <entry key="tourist/src/main/res/drawable/curvedtop.xml" value="0.21302083333333333" />
+        <entry key="tourist/src/main/res/drawable/editable_theme.xml" value="0.21302083333333333" />
         <entry key="tourist/src/main/res/drawable/view_bg.xml" value="0.21302083333333333" />
         <entry key="tourist/src/main/res/layout/activity_drawer_screen.xml" value="0.196875" />
+        <entry key="tourist/src/main/res/layout/activity_edit_tour_guide_profile.xml" value="0.196875" />
+        <entry key="tourist/src/main/res/layout/activity_tour_guide_profile.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/activity_tourist_map.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/app_bar_drawer_screen.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/bottomsheet_layout.xml" value="0.196875" />
@@ -115,14 +118,18 @@
         <entry key="tourist/src/main/res/layout/fragment_home.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/fragment_login.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/fragment_maps.xml" value="0.2939346811819596" />
+        <entry key="tourist/src/main/res/layout/fragment_profile_.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/fragment_reciept.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/fragment_search_for_tour_guide.xml" value="0.4393063583815029" />
         <entry key="tourist/src/main/res/layout/fragment_signup_tourguide.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/fragment_signup_tourist.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/fragment_splash.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/fragment_start_tour.xml" value="0.196875" />
-        <entry key="tourist/src/main/res/layout/fragment_tour_guidehome.xml" value="0.196875" />
+        <entry key="tourist/src/main/res/layout/fragment_tour_guide_maps.xml" value="0.196875" />
+        <entry key="tourist/src/main/res/layout/fragment_tour_guidehome.xml" value="0.25" />
+        <entry key="tourist/src/main/res/layout/fragment_trip__reciept_.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/fragment_wallet.xml" value="0.196875" />
+        <entry key="tourist/src/main/res/layout/fragment_wallet__guide_.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/tourguideitemview.xml" value="0.196875" />
         <entry key="tourist/src/main/res/layout/transfer.xml" value="0.196875" />
         <entry key="tourist/src/main/res/menu/activity_drawer_screen_drawer.xml" value="0.5" />

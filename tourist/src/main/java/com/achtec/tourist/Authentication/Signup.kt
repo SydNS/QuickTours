@@ -227,28 +227,31 @@ class SignupTourguide : Fragment() {
                 val user = auth.currentUser
 
                 currentUserId = user?.uid.toString()
-                if (appuser == "Tourist") {
-                    customersDatabaseRef = firebasedatabase.reference
-                        .child(getString(R.string.users)).child(getString(R.string.clients))
-                        .child(currentUserId)
-                    customersDatabaseRef.setValue(true)
+                when (appuser) {
+                    "Tourist" -> {
+                        customersDatabaseRef = firebasedatabase.reference
+                            .child(getString(R.string.users)).child(getString(R.string.clients))
+                            .child(currentUserId)
+                        customersDatabaseRef.setValue(true)
 
-                    loadingBar.dismiss()
-                    Navigation.findNavController(view)
-                        .navigate(R.id.action_signupTourguide_to_nav_home)
-                } else {
+                        loadingBar.dismiss()
+                        Navigation.findNavController(view)
+                            .navigate(R.id.action_signupTourguide_to_nav_home)
+                    }
+                    else -> {
 
-                    deliverersDatabaseRef =
-                        FirebaseDatabase.getInstance().reference.child(getString(R.string.users))
-                            .child(getString(R.string.tourguide)).child(
-                                currentUserId
-                            )
-                    deliverersDatabaseRef.setValue(true)
+                        deliverersDatabaseRef =
+                            FirebaseDatabase.getInstance().reference.child(getString(R.string.users))
+                                .child(getString(R.string.tourguide)).child(
+                                    currentUserId
+                                )
+                        deliverersDatabaseRef.setValue(true)
 
-                    loadingBar.dismiss()
-                    Navigation.findNavController(view)
-                        .navigate(R.id.action_signupTourguide_to_tourGuidehome2)
+                        loadingBar.dismiss()
+                        Navigation.findNavController(view)
+                            .navigate(R.id.action_signupTourguide_to_tourGuidehome2)
 
+                    }
                 }
 
 

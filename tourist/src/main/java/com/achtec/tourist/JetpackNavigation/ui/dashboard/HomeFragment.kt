@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.achtec.tourist.R
@@ -30,14 +32,14 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        _binding!!.findtourguidesforyou.setOnClickListener {
+        _binding!!.findTourGuides.setOnClickListener {
             findNavController().navigate(R.id.action_nav_home_to_search_for_tour_guide)
 
         }
-        _binding !!. walletbtn . setOnClickListener {
+        _binding !!.eWallet. setOnClickListener {
             findNavController().navigate(R.id.action_nav_home_to_nav_slideshow)
         }
-        _binding !!. circleImageView . setOnClickListener {
+        _binding !!.circleImageView. setOnClickListener {
 
             findNavController().navigate(R.id.action_nav_home_to_nav_gallery)
         }
@@ -50,6 +52,9 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+
+
 
 
 }

@@ -6,10 +6,150 @@
     app:startDestination="@id/splashFragment">
 
     <fragment
+        android:id="@+id/tourGuidehome"
+        android:name="com.achtec.tourist.Tour_guide_Home"
+        android:label="fragment_tour_guidehome"
+        tools:layout="@layout/fragment_tour_guidehome">
+        <action
+            android:id="@+id/action_tourGuidehome_to_tourGuideMapsFragment"
+            app:destination="@id/tourGuideMapsFragment" />
+
+        <action
+            android:id="@+id/action_tourGuidehome_to_wallet_Guide_Fragment"
+            app:destination="@id/wallet_Guide_Fragment" />
+        <action
+            android:id="@+id/action_tourGuidehome_to_profile_Fragment"
+            app:destination="@id/profile_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFrag"
+        android:name="com.achtec.tourist.Authentication.LoginFrag"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_loginFrag_to_tourGuidehome"
+            app:destination="@id/tourGuidehome" />
+        <action
+            android:id="@+id/action_loginFrag_to_signupTourguide"
+            app:destination="@id/signupTourguide" />
+        <action
+            android:id="@+id/action_loginFrag_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupTourguide"
+        android:name="com.achtec.tourist.Authentication.SignupTourguide"
+        android:label="fragment_signup_tourguide"
+        tools:layout="@layout/fragment_signup_tourguide">
+        <action
+            android:id="@+id/action_signupTourguide_to_tourGuidehome"
+            app:destination="@id/tourGuidehome" />
+
+        <action
+            android:id="@+id/action_signupTourguide_to_tourGuidehome2"
+            app:destination="@id/tourGuidehome" />
+        <action
+            android:id="@+id/action_signupTourguide_to_loginFrag"
+            app:destination="@id/loginFrag" />
+        <action
+            android:id="@+id/action_signupTourguide_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.achtec.tourist.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/action_splashFragment_to_tourGuidehome"
+            app:destination="@id/tourGuidehome" />
+        <action
+            android:id="@+id/action_splashFragment_to_loginFrag"
+            app:destination="@id/loginFrag" />
+        <action
+            android:id="@+id/action_splashFragment_to_signupTourguide"
+            app:destination="@id/signupTourguide" />
+        <action
+            android:id="@+id/action_splashFragment_to_signupTourguide2"
+            app:destination="@id/signupTourguide" />
+        <action
+            android:id="@+id/action_splashFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.achtec.tourist.JetpackNavigation.ui.profile.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_gallery">
+        <action
+            android:id="@+id/action_nav_gallery_to_nav_slideshow"
+            app:destination="@id/nav_slideshow" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.achtec.tourist.JetpackNavigation.ui.wallet.WalletFragment"
+        android:label="@string/menu_wallet"
+        tools:layout="@layout/fragment_wallet">
+        <action
+            android:id="@+id/action_nav_slideshow_to_nav_gallery"
+            app:destination="@id/nav_gallery" />
+    </fragment>
+    <fragment
+        android:id="@+id/recieptFragment"
+        android:name="com.achtec.tourist.RecieptFragment"
+        android:label="fragment_reciept"
+        tools:layout="@layout/fragment_reciept">
+        <action
+            android:id="@+id/action_recieptFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_recieptFragment_to_nav_slideshow"
+            app:destination="@id/nav_slideshow" />
+    </fragment>
+    <fragment
+        android:id="@+id/search_for_tour_guide"
+        android:name="com.achtec.tourist.JetpackNavigation.ui.dashboard.Search_for_tour_guide"
+        android:label="Pick up and Destination"
+        tools:layout="@layout/fragment_search_for_tour_guide">
+        <action
+            android:id="@+id/action_search_for_tour_guide_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_search_for_tour_guide_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.achtec.tourist.JetpackNavigation.ui.dashboard.MapsFragment"
+        android:label="Make A Request"
+        tools:layout="@layout/fragment_maps">
+        <action
+            android:id="@+id/action_mapsFragment_to_startTour"
+            app:destination="@id/startTour" />
+    </fragment>
+    <fragment
+        android:id="@+id/startTour"
+        android:name="com.achtec.tourist.StartTour"
+        android:label="Let's Start your Tour"
+        tools:layout="@layout/fragment_start_tour">
+        <action
+            android:id="@+id/action_startTour_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_startTour_to_search_for_tour_guide"
+            app:destination="@id/search_for_tour_guide" />
+        <action
+            android:id="@+id/action_startTour_to_recieptFragment"
+            app:destination="@id/recieptFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/nav_home"
         android:name="com.achtec.tourist.JetpackNavigation.ui.dashboard.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_nav_home_to_search_for_tour_guide"
             app:destination="@id/search_for_tour_guide" />
@@ -26,131 +166,39 @@
             android:id="@+id/action_nav_home_to_loginFrag"
             app:destination="@id/loginFrag" />
     </fragment>
-
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.achtec.tourist.JetpackNavigation.ui.profile.ProfileFragment"
-        android:label="@string/menu_profile"
-        tools:layout="@layout/fragment_gallery" >
+        android:id="@+id/tourGuideMapsFragment"
+        android:name="com.achtec.tourist.TourGuideMapsFragment"
+        android:label="fragment_tour_guide_maps"
+        tools:layout="@layout/fragment_tour_guide_maps">
         <action
-            android:id="@+id/action_nav_gallery_to_nav_slideshow"
-            app:destination="@id/nav_slideshow" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.achtec.tourist.JetpackNavigation.ui.wallet.WalletFragment"
-        android:label="@string/menu_wallet"
-        tools:layout="@layout/fragment_wallet" >
-        <action
-            android:id="@+id/action_nav_slideshow_to_nav_gallery"
-            app:destination="@id/nav_gallery" />
+            android:id="@+id/action_tourGuideMapsFragment_to_trip_Reciept_Fragment"
+            app:destination="@id/trip_Reciept_Fragment" />
     </fragment>
     <fragment
-        android:id="@+id/search_for_tour_guide"
-        android:name="com.achtec.tourist.JetpackNavigation.ui.dashboard.Search_for_tour_guide"
-        android:label="Pick up and Destination"
-        tools:layout="@layout/fragment_search_for_tour_guide" >
+        android:id="@+id/wallet_Guide_Fragment"
+        android:name="com.achtec.tourist.Wallet_Guide_Fragment"
+        android:label="fragment_wallet__guide_"
+        tools:layout="@layout/fragment_wallet__guide_" />
+    <fragment
+        android:id="@+id/trip_Reciept_Fragment"
+        android:name="com.achtec.tourist.Trip_Reciept_Fragment"
+        android:label="fragment_trip__reciept_"
+        tools:layout="@layout/fragment_trip__reciept_">
         <action
-            android:id="@+id/action_search_for_tour_guide_to_nav_home"
-            app:destination="@id/nav_home" />
-        <action
-            android:id="@+id/action_search_for_tour_guide_to_mapsFragment"
-            app:destination="@id/mapsFragment" />
+            android:id="@+id/action_trip_Reciept_Fragment_to_wallet_Guide_Fragment"
+            app:destination="@id/wallet_Guide_Fragment" />
     </fragment>
     <fragment
-        android:id="@+id/mapsFragment"
-        android:name="com.achtec.tourist.JetpackNavigation.ui.dashboard.MapsFragment"
-        android:label="Make A Request"
-        tools:layout="@layout/fragment_maps" >
+        android:id="@+id/profile_Fragment"
+        android:name="com.achtec.tourist.Profile_Fragment"
+        android:label="fragment_profile_"
+        tools:layout="@layout/fragment_profile_">
         <action
-            android:id="@+id/action_mapsFragment_to_startTour"
-            app:destination="@id/startTour" />
-    </fragment>
-    <fragment
-        android:id="@+id/startTour"
-        android:name="com.achtec.tourist.StartTour"
-        android:label="Let's Start your Tour"
-        tools:layout="@layout/fragment_start_tour" >
+            android:id="@+id/action_profile_Fragment_to_wallet_Guide_Fragment"
+            app:destination="@id/wallet_Guide_Fragment" />
         <action
-            android:id="@+id/action_startTour_to_nav_home"
-            app:destination="@id/nav_home" />
-        <action
-            android:id="@+id/action_startTour_to_search_for_tour_guide"
-            app:destination="@id/search_for_tour_guide" />
-        <action
-            android:id="@+id/action_startTour_to_recieptFragment"
-            app:destination="@id/recieptFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/tourGuidehome"
-        android:name="com.achtec.tourist.JetpackNavigation.ui.dashboard.HomeFragment"
-        android:label="fragment_tour_guidehome"
-        tools:layout="@layout/fragment_tour_guidehome" />
-    <fragment
-        android:id="@+id/recieptFragment"
-        android:name="com.achtec.tourist.RecieptFragment"
-        android:label="fragment_reciept"
-        tools:layout="@layout/fragment_reciept" >
-        <action
-            android:id="@+id/action_recieptFragment_to_nav_home"
-            app:destination="@id/nav_home" />
-        <action
-            android:id="@+id/action_recieptFragment_to_nav_slideshow"
-            app:destination="@id/nav_slideshow" />
-    </fragment>
-    <fragment
-        android:id="@+id/loginFrag"
-        android:name="com.achtec.tourist.Authentication.LoginFrag"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_loginFrag_to_nav_home"
-            app:destination="@id/nav_home" />
-        <action
-            android:id="@+id/action_loginFrag_to_tourGuidehome"
-            app:destination="@id/tourGuidehome" />
-        <action
-            android:id="@+id/action_loginFrag_to_signupTourguide"
-            app:destination="@id/signupTourguide" />
-    </fragment>
-    <fragment
-        android:id="@+id/signupTourguide"
-        android:name="com.achtec.tourist.Authentication.SignupTourguide"
-        android:label="fragment_signup_tourguide"
-        tools:layout="@layout/fragment_signup_tourguide" >
-        <action
-            android:id="@+id/action_signupTourguide_to_tourGuidehome"
-            app:destination="@id/tourGuidehome" />
-        <action
-            android:id="@+id/action_signupTourguide_to_nav_home"
-            app:destination="@id/nav_home" />
-        <action
-            android:id="@+id/action_signupTourguide_to_tourGuidehome2"
-            app:destination="@id/tourGuidehome" />
-        <action
-            android:id="@+id/action_signupTourguide_to_loginFrag"
-            app:destination="@id/loginFrag" />
-    </fragment>
-    <fragment
-        android:id="@+id/splashFragment"
-        android:name="com.achtec.tourist.SplashFragment"
-        android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
-        <action
-            android:id="@+id/action_splashFragment_to_nav_home"
-            app:destination="@id/nav_home" />
-        <action
-            android:id="@+id/action_splashFragment_to_tourGuidehome"
-            app:destination="@id/tourGuidehome" />
-        <action
-            android:id="@+id/action_splashFragment_to_loginFrag"
-            app:destination="@id/loginFrag" />
-        <action
-            android:id="@+id/action_splashFragment_to_signupTourguide"
-            app:destination="@id/signupTourguide" />
-        <action
-            android:id="@+id/action_splashFragment_to_signupTourguide2"
-            app:destination="@id/signupTourguide" />
+            android:id="@+id/action_profile_Fragment_to_trip_Reciept_Fragment"
+            app:destination="@id/trip_Reciept_Fragment" />
     </fragment>
 </navigation>

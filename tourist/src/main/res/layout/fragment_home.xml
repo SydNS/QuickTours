@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".JetpackNavigation.ui.dashboard.HomeFragment"
-    android:background="@color/white">
+    tools:context=".JetpackNavigation.ui.dashboard.HomeFragment">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -150,7 +149,6 @@
             app:cardElevation="5dp">
 
             <LinearLayout
-                android:id="@+id/walletbtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"

@@ -45,6 +45,9 @@
                 android:id="@+id/nav_about"
                 android:icon="@drawable/about_24"
                 android:title="@string/about" />
+            <item android:id="@+id/tourGuidehome"
+                android:title="GuideHome"
+                android:visible="false"/>
         </menu>
     </item>
 </menu>

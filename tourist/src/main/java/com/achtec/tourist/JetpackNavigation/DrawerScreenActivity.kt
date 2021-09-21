@@ -22,6 +22,14 @@ import com.achtec.tourist.R
 import com.achtec.tourist.databinding.ActivityDrawerScreenBinding
 
 
+import androidx.navigation.NavGraph
+
+import androidx.navigation.NavInflater
+
+
+
+
+
 class DrawerScreenActivity : AppCompatActivity(), MyDrawerController {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -45,6 +53,17 @@ class DrawerScreenActivity : AppCompatActivity(), MyDrawerController {
 
 
          navController = findNavController(R.id.nav_host_fragment_content_drawer_screen)
+
+        val navInflater = navController.navInflater
+        val graph = navInflater.inflate(R.navigation.mobile_navigation)
+
+//        if (1==2) {
+//            graph.startDestination = R.id.tourGuidehome
+//        } else {
+//            graph.startDestination = R.id.nav_home
+//        }
+
+//        navController.graph = graph
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
@@ -54,6 +73,8 @@ class DrawerScreenActivity : AppCompatActivity(), MyDrawerController {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+
 
 
         if (ContextCompat.checkSelfPermission(

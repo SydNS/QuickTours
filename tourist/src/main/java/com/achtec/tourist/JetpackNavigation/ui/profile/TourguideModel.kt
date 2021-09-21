@@ -1,4 +1,4 @@
-package com.achtec.tourist.JetpackNavigation
+package com.achtec.tourist.JetpackNavigation.ui.profile
 
 data class TourguideModel(
     val image: Int,
