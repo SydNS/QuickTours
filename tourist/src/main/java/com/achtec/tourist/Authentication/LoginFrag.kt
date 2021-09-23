@@ -101,7 +101,7 @@ class LoginFrag : Fragment() {
         loginbtn.setOnClickListener {
             // loading bar that show the user some thing is happening
             loadingBar.setTitle("Please wait :")
-            loadingBar.setMessage("While system is performing processing on your data...")
+            loadingBar.setMessage("While We Authenticate You...")
             loadingBar.show()
             login(loginbtn, login_emailaddress, login_password, loginbanner)
         }
