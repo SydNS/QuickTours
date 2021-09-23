@@ -14,11 +14,13 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import com.achtec.tourist.JetpackNavigation.ui.profile.UserInformation
 import com.achtec.tourist.R
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.UserInfo
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -53,6 +55,8 @@ class SignupTourguide : Fragment() {
     lateinit var userradiobtn: RadioButton
     lateinit var delivererradiobtn: RadioButton
     lateinit var radioUserButtonselected: RadioButton
+
+    //userinfoe
 
 
     //firebase variables
@@ -105,6 +109,8 @@ class SignupTourguide : Fragment() {
         login_text = v.findViewById(R.id.login_text)
 
         login_text.setOnClickListener {
+
+            storeDecidedUser("appuser")
             findNavController().navigate(R.id.action_signupTourguide_to_loginFrag)
 
         }
@@ -192,7 +198,7 @@ class SignupTourguide : Fragment() {
                 else -> {
                     signupbanner.text = getString(R.string.thanks)
 //            method creating the user with the email & password provided
-                    createAccount(uemail, password, v, userdecision)
+                    createAccount(uemail, password, v, userdecision,uname, phone)
 
                 }
 
@@ -202,16 +208,19 @@ class SignupTourguide : Fragment() {
         return v
     }
 
-
+   lateinit var userInfo: UserInformation
     private fun createAccount(
         email: String,
         password: String,
         view: View,
-        appuser: String
+        appuser: String,
+        uname: String,
+        phone: String
     ) {
 
         storeDecidedUser(appuser)
 
+        userInfo=UserInformation(uname,email,phone,appuser)
         // loading bar that show the user some thing is happening
         loadingBar.setTitle("Please wait :")
         loadingBar.setMessage("While system is performing processing on your data...")
@@ -231,8 +240,8 @@ class SignupTourguide : Fragment() {
                     "Tourist" -> {
                         customersDatabaseRef = firebasedatabase.reference
                             .child(getString(R.string.users)).child(getString(R.string.clients))
-                            .child(currentUserId)
-                        customersDatabaseRef.setValue(true)
+                            .child(currentUserId).push()
+//                        customersDatabaseRef.setValue(true)
 
                         loadingBar.dismiss()
                         Navigation.findNavController(view)
