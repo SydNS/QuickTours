@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/tourGuidehome"
-        android:name="com.achtec.tourist.JetpackNavigation.ui_tourguide.Tour_guide_Home"
-        android:label="fragment_tour_guidehome"
-        tools:layout="@layout/fragment_tour_guidehome">
+        android:name="com.achtec.tourist.JetpackNavigation.ui_tourguide.TourGuideMapsFragment"
+        android:label="fragment_tour_guide_maps"
+        tools:layout="@layout/fragment_tour_guide_maps">
         <action
             android:id="@+id/action_tourGuidehome_to_tourGuideMapsFragment"
             app:destination="@id/tourGuideMapsFragment" />
@@ -64,19 +64,28 @@
 
         <action
             android:id="@+id/action_splashFragment_to_tourGuidehome"
-            app:destination="@id/tourGuidehome" />
+            app:destination="@id/tourGuidehome"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_splashFragment_to_loginFrag"
-            app:destination="@id/loginFrag" />
+            app:destination="@id/loginFrag"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_splashFragment_to_signupTourguide"
             app:destination="@id/signupTourguide" />
         <action
             android:id="@+id/action_splashFragment_to_signupTourguide2"
-            app:destination="@id/signupTourguide" />
+            app:destination="@id/signupTourguide"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_splashFragment_to_nav_home"
-            app:destination="@id/nav_home" />
+            app:destination="@id/nav_home"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
@@ -168,9 +177,9 @@
     </fragment>
     <fragment
         android:id="@+id/tourGuideMapsFragment"
-        android:name="com.achtec.tourist.JetpackNavigation.ui_tourguide.TourGuideMapsFragment"
-        android:label="fragment_tour_guide_maps"
-        tools:layout="@layout/fragment_tour_guide_maps">
+        android:name="com.achtec.tourist.JetpackNavigation.ui_tourguide.Tour_guide_Home"
+        android:label="fragment_tour_guidehome"
+        tools:layout="@layout/fragment_tour_guidehome">
         <action
             android:id="@+id/action_tourGuideMapsFragment_to_trip_Reciept_Fragment"
             app:destination="@id/trip_Reciept_Fragment" />
