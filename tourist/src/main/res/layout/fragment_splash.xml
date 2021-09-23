@@ -12,11 +12,12 @@
         android:id="@+id/app_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="120dp"
+        android:fontFamily="sans-serif"
         android:text="@string/app_name"
         android:textColor="@color/black"
         android:textSize="45sp"
-        android:fontFamily="sans-serif"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,40 +26,63 @@
         android:id="@+id/enter_button"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/bg1"
         android:drawableEnd="@drawable/arrow_right_alt_24"
         android:text="@string/log_in"
-        app:layout_constraintBottom_toTopOf="@+id/find_best_guide"
-        app:layout_constraintEnd_toEndOf="@+id/find_best_guide"
-        app:layout_constraintHorizontal_bias="0.547"
-        app:layout_constraintStart_toStartOf="@+id/find_best_guide"
-        app:layout_constraintTop_toBottomOf="@+id/app_title"
-        app:layout_constraintVertical_bias="0.802" />
+        app:layout_constraintEnd_toEndOf="@+id/app_title"
+        app:layout_constraintStart_toStartOf="@+id/app_title"
+        app:layout_constraintTop_toBottomOf="@+id/app_title" />
 
     <TextView
         android:id="@+id/find_best_guide"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
+        android:layout_marginTop="36dp"
         android:text="@string/find_the_best_tour_guide_in_town"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/donthaveaccount" />
 
     <TextView
         android:id="@+id/developer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="8dp"
         android:text="Powered By Small Minds Africa"
+        android:textColor="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textColor="@color/blue"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/find_best_guide"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/donthaveaccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:autoLink="none"
+        android:text="Dont Have An  Account, Sign Up"
+        android:textColor="@color/ic_launcher_background"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@+id/login"
+        app:layout_constraintStart_toStartOf="@+id/login"
+        app:layout_constraintTop_toBottomOf="@+id/login" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:text="@string/log_in"
+        app:layout_constraintEnd_toEndOf="@+id/enter_button"
+        app:layout_constraintStart_toStartOf="@+id/enter_button"
+        app:layout_constraintTop_toBottomOf="@+id/enter_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
