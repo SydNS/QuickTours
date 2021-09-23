@@ -14,6 +14,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.NonNull
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.achtec.tourist.R
@@ -34,13 +36,13 @@ import com.google.firebase.database.*
 import java.util.ArrayList
 import java.util.HashMap
 
-class TourGuideMapsFragment : Fragment(),OnMapReadyCallback,RoutingListener {
+class TourGuideMapsFragment : Fragment(), OnMapReadyCallback, RoutingListener {
 
     private var mMap: GoogleMap? = null
     var mLastLocation: Location? = null
     var mLocationRequest: LocationRequest? = null
     var mapFragment: SupportMapFragment? = null
-    private var myLocation: LatLng? = null
+    private lateinit var myLocation: LatLng
     private var myMarker: Marker? = null
 
     private var mCustomerInfo: LinearLayout? = null
@@ -71,20 +73,7 @@ class TourGuideMapsFragment : Fragment(),OnMapReadyCallback,RoutingListener {
     private var destinationLatLng: LatLng? = null
 
 
-    private val callback = OnMapReadyCallback { googleMap ->
-        /**
-         * Manipulates the map once available.
-         * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera.
-         * In this case, we just add a marker near Sydney, Australia.
-         * If Google Play services is not installed on the device, the user will be prompted to
-         * install it inside the SupportMapFragment. This method will only be triggered once the
-         * user has installed Google Play services and returned to the app.
-         */
-        val sydney = LatLng(-34.0, 151.0)
-        googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
-    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -154,6 +143,7 @@ class TourGuideMapsFragment : Fragment(),OnMapReadyCallback,RoutingListener {
         })
         mSetting.setOnClickListener(View.OnClickListener {
 
+
         })
         mHistory.setOnClickListener(View.OnClickListener {
 
@@ -162,11 +152,6 @@ class TourGuideMapsFragment : Fragment(),OnMapReadyCallback,RoutingListener {
         return v
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
-        mapFragment?.getMapAsync(callback)
-    }
 
 
     private fun endRide() {
@@ -390,8 +375,8 @@ class TourGuideMapsFragment : Fragment(),OnMapReadyCallback,RoutingListener {
                     )
                     myLocation = LatLng(mLastLocation!!.latitude, mLastLocation!!.longitude)
                     myMarker = mMap!!.addMarker(
-                        MarkerOptions().position(myLocation).title("Your Ambulance")
-                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.approval_24))
+                        MarkerOptions().position(myLocation).title("Youre here")
+                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.tour_guide3))
                     )
                     mMap!!.moveCamera(CameraUpdateFactory.newLatLng(latLng))
                     mMap!!.animateCamera(CameraUpdateFactory.zoomTo(11f))
@@ -510,13 +495,6 @@ class TourGuideMapsFragment : Fragment(),OnMapReadyCallback,RoutingListener {
     }
 
 
-    override fun onStop() {
-        super.onStop()
-        if (!isLoggingOut) {
-            disconnectDriver()
-        }
-    }
-
     private var polylines: MutableList<Polyline>? = null
     private val COLORS = intArrayOf(R.color.primary_dark_material_light)
     override fun onRoutingFailure(p0: com.directions.route.RouteException?) {
@@ -569,4 +547,23 @@ class TourGuideMapsFragment : Fragment(),OnMapReadyCallback,RoutingListener {
         }
         polylines!!.clear()
     }
+
+
+    override fun onResume() {
+        super.onResume()
+        val supportActionBar: ActionBar? = (requireActivity() as AppCompatActivity).supportActionBar
+        supportActionBar?.hide()
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+        (requireActivity() as AppCompatActivity).supportActionBar?.show()
+        if (!isLoggingOut) {
+            disconnectDriver()
+        }
+    }
+
+
+
 }
