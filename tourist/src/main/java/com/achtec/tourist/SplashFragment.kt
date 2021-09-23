@@ -24,6 +24,7 @@ import com.achtec.tourist.JetpackNavigation.MyDrawerController
 import com.achtec.tourist.databinding.FragmentSplashBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import kotlinx.android.synthetic.main.fragment_splash.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -91,17 +92,36 @@ class SplashFragment : Fragment() {
             AnimationUtils.loadAnimation(requireActivity(), R.anim.right_anim)
         binding.developer.animation =
             AnimationUtils.loadAnimation(requireActivity(), R.anim.bottom_anim)
+        binding.login
+            .animation =
+            AnimationUtils.loadAnimation(requireActivity(), R.anim.fadein)
 
         binding.enterButton.setOnClickListener {
 
-//            Toast.makeText(activity,"rehtrhtr",Toast.LENGTH_SHORT).show()
-            NavHostFragment.findNavController(this)
-                .navigate(R.id.action_splashFragment_to_loginFrag)
+////            Toast.makeText(activity,"rehtrhtr",Toast.LENGTH_SHORT).show()
+//            NavHostFragment.findNavController(this)
+//                .navigate(R.id.action_splashFragment_to_loginFrag)
         }
 
-        Handler().postDelayed({
-            checkUserSignupStatus()
-        }, 4000)
+        if (currentUser != null) {
+            if (getSignupStatusType() == "Tourist") {
+                findNavController().navigate(R.id.action_splashFragment_to_nav_home)
+            } else if (getSignupStatusType() == "TourGuide") {
+                findNavController().navigate(R.id.action_splashFragment_to_tourGuidehome)
+            }
+        }
+
+        binding.login.setOnClickListener {
+
+            findNavController().navigate(R.id.action_splashFragment_to_loginFrag)
+//            checkUserSignupStatus()
+
+        }
+
+        binding.donthaveaccount.setOnClickListener {
+            NavHostFragment.findNavController(this)
+                .navigate(R.id.action_splashFragment_to_signupTourguide2)
+        }
 
 
 
@@ -150,10 +170,10 @@ class SplashFragment : Fragment() {
             true -> {
                 if (currentUser == null) {
                     findNavController().navigate(R.id.action_splashFragment_to_loginFrag)
-                }else{
-                    if (getSignupStatusType()=="Tourist"){
+                } else {
+                    if (getSignupStatusType() == "Tourist") {
                         findNavController().navigate(R.id.action_splashFragment_to_nav_home)
-                    }else if (getSignupStatusType()=="TourGuide"){
+                    } else if (getSignupStatusType() == "TourGuide") {
                         findNavController().navigate(R.id.action_splashFragment_to_tourGuidehome)
                     }
                 }
@@ -170,11 +190,11 @@ class SplashFragment : Fragment() {
 
     }
 
-    private fun getSignupStatusType(): String?{
+    private fun getSignupStatusType(): String? {
         val sharedPreferences =
             activity?.getSharedPreferences("OldUserType", Context.MODE_PRIVATE)
 
-        return sharedPreferences!!.getString("Type","Tourist")
+        return sharedPreferences!!.getString("Type", "Tourist")
     }
 
 
